@@ -1,0 +1,47 @@
+{
+  "namaLegal": "PT Luhas Wisata Amanah",
+  "deskripsiSingkat": "Travel umroh resmi berizin Kemenag untuk muslim muda. Harga transparan, bisa dicicil, pendamping ramah, dan tim yang membalas chat.",
+  "tahunBerdiri": 2015,
+  "jumlahJamaah": 12480,
+  "jamaahPerTahun": 1800,
+  "ratingGoogle": { "nilai": 4.8, "jumlah": 623 },
+  "legalitas": {
+    "skPpiu": "SK PPIU No. 1234 Tahun 2023",
+    "urlVerifikasiKemenag": "https://haji.kemenag.go.id/v5/daftar-ppiu",
+    "nib": "0812345678901234",
+    "akta": "Akta Notaris No. 42 tanggal 10 Maret 2015"
+  },
+  "kontak": {
+    "waUtama": "6285135720948",
+    "waDivisi": [
+      { "divisi": "Umum & Konsultasi", "nomor": "6285135720948" },
+      { "divisi": "Grup & Rombongan", "nomor": "6285135720948" },
+      { "divisi": "Cicilan & Pembayaran", "nomor": "6285135720948" }
+    ],
+    "email": "halo@luhas.co.id",
+    "telepon": "+62215790xxxx",
+    "alamat": {
+      "jalan": "Jl. Casablanca Raya Kav. 88, Menara Amanah Lt. 5",
+      "kota": "Jakarta Selatan",
+      "provinsi": "DKI Jakarta",
+      "kodePos": "12870"
+    },
+    "jamOperasional": [
+      { "hari": "Senin–Jumat", "jam": "09.00–18.00 WIB" },
+      { "hari": "Sabtu", "jam": "09.00–15.00 WIB" },
+      { "hari": "Minggu & Libur Nasional", "jam": "Tutup (chat dibalas hari kerja)" }
+    ],
+    "slaBalasMenit": 15
+  },
+  "sosial": {
+    "instagram": "https://instagram.com/luhas.umroh",
+    "tiktok": "https://tiktok.com/@luhas.umroh",
+    "youtube": "https://youtube.com/@luhasumroh",
+    "facebook": "https://facebook.com/luhasumroh"
+  },
+  "banner": {
+    "aktif": true,
+    "teks": "Promo Umroh Ramadhan 1448 H — kuota terbatas, DP mulai Rp 5 juta.",
+    "tautan": "/paket?kategori=ramadhan"
+  }
+}

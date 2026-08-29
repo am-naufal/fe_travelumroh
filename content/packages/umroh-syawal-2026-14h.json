@@ -1,0 +1,38 @@
+{
+  "nama": "Umroh Syawal 2026 (Selesai)",
+  "slug": "umroh-syawal-2026-14h",
+  "kategori": "reguler",
+  "hargaMulai": 34500000,
+  "hargaPerKamar": { "quad": 34500000, "triple": 36500000, "double": 40500000 },
+  "durasiHari": 14,
+  "keberangkatan": [
+    { "tanggal": "2026-05-05", "kuota": 40, "sisaSeat": 0, "status": "tutup" }
+  ],
+  "kotaKeberangkatan": ["Jakarta"],
+  "maskapai": { "nama": "Saudia Airlines", "transit": false },
+  "hotelMakkah": { "nama": "Al Kiswah Towers", "bintang": 4, "jarakMeter": 500 },
+  "hotelMadinah": { "nama": "Al Haram Hotel", "bintang": 4, "jarakMeter": 220 },
+  "pembimbingSlug": "ustadz-abdul-hakim",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan", "deskripsi": "Penerbangan menuju Madinah." },
+    { "hari": 14, "judul": "Kepulangan", "deskripsi": "Penerbangan pulang ke Tanah Air." }
+  ],
+  "termasuk": ["Tiket pesawat PP", "Visa umroh", "Hotel bintang 4", "Makan 3x sehari"],
+  "tidakTermasuk": ["Pembuatan paspor", "Vaksin meningitis", "Pengeluaran pribadi"],
+  "syaratDokumen": ["Paspor berlaku minimal 8 bulan", "Kartu vaksin meningitis (ICV)"],
+  "dpMinimum": 5000000,
+  "tenorCicilan": [3, 6],
+  "galeri": [
+    { "src": "/images/paket/syawal-arsip.jpg", "alt": "Dokumentasi rombongan Umroh Syawal 2026 di depan Masjid Nabawi", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-syawal-2026-14h.pdf",
+  "ringkasan": "Keberangkatan Syawal 2026 telah selesai. Halaman ini disimpan untuk dokumentasi dan referensi harga.",
+  "kebijakanPembayaran": "Keberangkatan telah selesai. Untuk paket serupa, lihat Umroh Reguler Plus 10 Hari.",
+  "seo": {
+    "title": "Umroh Syawal 2026 — Keberangkatan Selesai | Luhas",
+    "description": "Arsip paket Umroh Syawal 2026. Keberangkatan telah selesai; lihat paket reguler terbaru Luhas untuk pilihan berikutnya."
+  },
+  "aktif": false,
+  "diperbaruiPada": "2026-05-20",
+  "unggulan": false
+}

@@ -1,0 +1,65 @@
+{
+  "nama": "Umroh VIP 9 Hari",
+  "slug": "umroh-vip-9h",
+  "kategori": "vip",
+  "hargaMulai": 62000000,
+  "hargaPerKamar": { "quad": 62000000, "triple": 66000000, "double": 72000000 },
+  "durasiHari": 9,
+  "keberangkatan": [
+    { "tanggal": "2026-10-27", "kuota": 20, "sisaSeat": 8, "status": "tersedia" },
+    { "tanggal": "2026-12-22", "kuota": 20, "sisaSeat": 3, "status": "hampir-penuh" }
+  ],
+  "kotaKeberangkatan": ["Jakarta"],
+  "maskapai": { "nama": "Garuda Indonesia", "transit": false },
+  "hotelMakkah": { "nama": "Raffles Makkah Palace", "bintang": 5, "jarakMeter": 100 },
+  "hotelMadinah": { "nama": "The Oberoi Madinah", "bintang": 5, "jarakMeter": 80 },
+  "pembimbingSlug": "ustadz-abdul-hakim",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan – fast track bandara", "deskripsi": "Layanan fast track imigrasi, penerbangan langsung, transportasi privat ke Makkah." },
+    { "hari": 2, "judul": "Umroh pertama dengan pendamping privat", "deskripsi": "Umroh pertama dengan muthawif khusus rombongan kecil, akses waktu yang lebih tenang." },
+    { "hari": 4, "judul": "City tour Makkah eksklusif", "deskripsi": "Ziarah dengan kendaraan privat dan pemandu sejarah." },
+    { "hari": 5, "judul": "Perjalanan ke Madinah", "deskripsi": "Transportasi privat/kereta cepat Haramain ke Madinah." },
+    { "hari": 6, "judul": "Raudhah dengan pengaturan khusus", "deskripsi": "Bantuan pengurusan jadwal Raudhah, ziarah Madinah eksklusif." },
+    { "hari": 8, "judul": "Kembali ke Jeddah", "deskripsi": "City tour Jeddah, kuliner, persiapan pulang." },
+    { "hari": 9, "judul": "Tiba di Tanah Air", "deskripsi": "Penerbangan pulang, penjemputan bandara opsional." }
+  ],
+  "termasuk": [
+    "Tiket Garuda kelas ekonomi (upgrade bisnis atas permintaan)",
+    "Visa umroh & asuransi premium",
+    "Hotel bintang 5 termewah, jarak <100 m dari Masjid",
+    "Makan fine-dining & prasmanan menu internasional",
+    "Transportasi privat & kereta cepat Haramain",
+    "Muthawif privat untuk rombongan maksimal 20 orang",
+    "Fast track bandara, handling koper penuh",
+    "Perlengkapan premium & air zamzam 10 liter"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Upgrade kelas bisnis penerbangan",
+    "Pengeluaran pribadi",
+    "Tips untuk staf hotel dan sopir"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (5 lembar)",
+    "Fotokopi KTP, KK, buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 15000000,
+  "tenorCicilan": [3, 6],
+  "badge": "best-seller",
+  "galeri": [
+    { "src": "/images/paket/vip-lobby.jpg", "alt": "Lobi mewah Raffles Makkah Palace dengan pemandangan menara jam", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/vip-kamar.jpg", "alt": "Suite hotel bintang lima menghadap langsung Masjidil Haram", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-vip-9h.pdf",
+  "ringkasan": "Rombongan kecil, hotel termewah tepat di sisi Masjid, transportasi privat, dan muthawif khusus. Untuk yang ingin fokus penuh beribadah.",
+  "kebijakanPembayaran": "DP Rp 15.000.000. Pelunasan H-40. Kuota sangat terbatas per keberangkatan (maksimal 20 jamaah).",
+  "seo": {
+    "title": "Umroh VIP 9 Hari — Rombongan Kecil, Hotel <100 m dari Masjid | Luhas",
+    "description": "Umroh VIP 9 hari: hotel bintang 5 termewah kurang dari 100 meter dari Masjid, transportasi privat, muthawif khusus. Mulai Rp 62 juta."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-19",
+  "unggulan": false
+}

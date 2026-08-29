@@ -1,0 +1,17 @@
+{
+  "slug": "dewi-anggraini",
+  "nama": "Dewi Anggraini",
+  "kota": "Jakarta",
+  "paketSlug": "umroh-hemat-9h",
+  "kutipan": "Gaji UMR, tetap bisa umroh. Saya cicil 12 bulan, angsurannya sesuai yang dihitung di kalkulator website, tidak ada bunga tersembunyi. Semua dikonfirmasi jelas oleh tim sebelum saya bayar DP.",
+  "foto": { "src": "/images/testimoni/dewi.jpg", "alt": "Dewi Anggraini mengangkat tangan berdoa di depan Ka'bah", "width": 800, "height": 800 },
+  "rating": 5,
+  "tahun": 2025,
+  "izinPublikasi": true,
+  "video": {
+    "src": "/video/testimoni-dewi.mp4",
+    "poster": { "src": "/images/testimoni/dewi-poster.jpg", "alt": "Cuplikan video Dewi bercerita tentang umroh dengan cicilan", "width": 720, "height": 1280 },
+    "durasiDetik": 44,
+    "transkrip": "Halo, aku Dewi. Aku karyawan biasa, gaji UMR. Aku pikir umroh itu jauh, ternyata bisa dicicil 12 bulan lewat Luhas. Angsurannya persis kayak di kalkulator, nggak ada biaya aneh. Alhamdulillah kesampaian."
+  }
+}

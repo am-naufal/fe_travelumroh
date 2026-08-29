@@ -1,0 +1,17 @@
+{
+  "slug": "nadia-kusuma",
+  "nama": "Nadia Kusuma",
+  "kota": "Surabaya",
+  "paketSlug": "umroh-reguler-12h",
+  "kutipan": "Saya berangkatkan kedua orang tua. Yang saya cari: pendampingan lansia. Luhas menyediakan kursi roda di bandara tanpa saya minta dua kali, dan pembimbing perempuannya benar-benar telaten menemani ibu saya.",
+  "foto": { "src": "/images/testimoni/nadia.jpg", "alt": "Nadia Kusuma bersama kedua orang tuanya di pelataran Masjid Nabawi", "width": 800, "height": 800 },
+  "rating": 5,
+  "tahun": 2026,
+  "izinPublikasi": true,
+  "video": {
+    "src": "/video/testimoni-nadia.mp4",
+    "poster": { "src": "/images/testimoni/nadia-poster.jpg", "alt": "Cuplikan video Nadia bercerita soal pendampingan orang tua saat umroh", "width": 720, "height": 1280 },
+    "durasiDetik": 55,
+    "transkrip": "Saya Nadia dari Surabaya. Saya memberangkatkan ayah dan ibu. Yang paling saya hargai dari Luhas adalah pendampingan lansia. Semua diurus, dari kursi roda sampai obat rutin diingatkan. Terima kasih Luhas."
+  }
+}

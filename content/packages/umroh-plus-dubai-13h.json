@@ -1,0 +1,62 @@
+{
+  "nama": "Umroh Plus Dubai 13 Hari",
+  "slug": "umroh-plus-dubai-13h",
+  "kategori": "plus-dubai",
+  "hargaMulai": 39900000,
+  "hargaPerKamar": { "quad": 39900000, "triple": 41900000, "double": 45900000 },
+  "durasiHari": 13,
+  "keberangkatan": [
+    { "tanggal": "2026-11-03", "kuota": 35, "sisaSeat": 20, "status": "tersedia" },
+    { "tanggal": "2027-02-09", "kuota": 35, "sisaSeat": 30, "status": "tersedia" }
+  ],
+  "kotaKeberangkatan": ["Jakarta", "Surabaya"],
+  "maskapai": { "nama": "Emirates", "transit": true },
+  "hotelMakkah": { "nama": "Pullman ZamZam Makkah", "bintang": 5, "jarakMeter": 150 },
+  "hotelMadinah": { "nama": "Anwar Al Madinah Mövenpick", "bintang": 5, "jarakMeter": 120 },
+  "pembimbingSlug": "ustadzah-nur-aisyah",
+  "itinerary": [
+    { "hari": 1, "judul": "Jakarta – Dubai", "deskripsi": "Penerbangan Emirates menuju Dubai, tiba dan check-in hotel." },
+    { "hari": 2, "judul": "Dubai city tour", "deskripsi": "Burj Khalifa, Dubai Mall, Palm Jumeirah, Dubai Marina, Museum of the Future." },
+    { "hari": 3, "judul": "Dubai – Madinah", "deskripsi": "Penerbangan ke Madinah, check-in hotel dekat Nabawi, mulai shalat arbain." },
+    { "hari": 5, "judul": "Ziarah Madinah", "deskripsi": "Raudhah, Masjid Quba, Jabal Uhud, kebun kurma." },
+    { "hari": 7, "judul": "Menuju Makkah & umroh", "deskripsi": "Ambil miqat di Bir Ali, perjalanan ke Makkah, umroh pertama." },
+    { "hari": 10, "judul": "City tour & umroh sunnah", "deskripsi": "Ziarah situs Makkah dan umroh sunnah dari Ji'ranah." },
+    { "hari": 13, "judul": "Kepulangan", "deskripsi": "Tawaf wada, ke Jeddah, penerbangan pulang." }
+  ],
+  "termasuk": [
+    "Tiket pesawat Emirates & penerbangan Dubai–Madinah",
+    "Visa umroh & visa Dubai",
+    "Hotel bintang 5 di Dubai, Makkah, dan Madinah",
+    "Makan 3x sehari, sarapan hotel Dubai",
+    "Tour Dubai dengan guide berbahasa Indonesia",
+    "Bus AC, pembimbing ibadah & muthawif, perlengkapan lengkap"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Tiket wahana opsional di Dubai (Burj Khalifa At The Top, dll.)",
+    "Kelebihan bagasi & pengeluaran pribadi",
+    "Tips guide dan sopir"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (6 lembar)",
+    "Fotokopi KTP, KK, buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 10000000,
+  "tenorCicilan": [3, 6, 9],
+  "galeri": [
+    { "src": "/images/paket/dubai-burj-khalifa.jpg", "alt": "Burj Khalifa menjulang dilihat dari air mancur Dubai Mall pada sore hari", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/dubai-marina.jpg", "alt": "Deretan gedung pencakar langit di kawasan Dubai Marina", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-plus-dubai-13h.pdf",
+  "ringkasan": "Umroh dengan hotel paling dekat Masjid (di bawah 200 meter) plus dua hari eksplorasi Dubai bersama keluarga.",
+  "kebijakanPembayaran": "DP Rp 10.000.000. Pelunasan H-40. Visa Dubai diproses H-14 sebelum berangkat.",
+  "seo": {
+    "title": "Umroh Plus Dubai 13 Hari — Hotel <200 m dari Masjid | Luhas",
+    "description": "Umroh 13 hari plus wisata Dubai dengan Emirates. Hotel bintang 5 kurang dari 200 meter dari Masjid. Mulai Rp 39,9 juta, bisa dicicil."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-15",
+  "unggulan": false
+}

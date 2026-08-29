@@ -1,0 +1,10 @@
+{
+  "slug": "ustadz-abdul-hakim",
+  "nama": "Abdul Hakim",
+  "gelar": "Lc., M.A.",
+  "peran": "Pembimbing Ibadah Senior",
+  "bio": "Alumni Universitas Islam Madinah, telah membimbing lebih dari 90 rombongan umroh sejak 2013. Dikenal sabar mendampingi jamaah lansia dan menjelaskan manasik dengan bahasa yang mudah dipahami.",
+  "foto": { "src": "/images/pembimbing/abdul-hakim.jpg", "alt": "Potret Ustadz Abdul Hakim mengenakan koko putih dan peci", "width": 800, "height": 800 },
+  "pengalamanTahun": 13,
+  "sertifikasi": ["Sertifikat Pembimbing Manasik Kemenag", "Ijazah S2 Fikih Universitas Islam Madinah"]
+}

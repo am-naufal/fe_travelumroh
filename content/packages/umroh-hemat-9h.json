@@ -1,0 +1,75 @@
+{
+  "nama": "Umroh Hemat 9 Hari",
+  "slug": "umroh-hemat-9h",
+  "kategori": "hemat",
+  "hargaMulai": 27500000,
+  "hargaPerKamar": { "quad": 27500000, "triple": 29500000, "double": 33000000 },
+  "durasiHari": 9,
+  "keberangkatan": [
+    { "tanggal": "2026-10-14", "kuota": 45, "sisaSeat": 12, "status": "tersedia" },
+    { "tanggal": "2026-11-11", "kuota": 45, "sisaSeat": 4, "status": "hampir-penuh" },
+    { "tanggal": "2026-12-09", "kuota": 45, "sisaSeat": 28, "status": "tersedia" }
+  ],
+  "kotaKeberangkatan": ["Jakarta", "Surabaya"],
+  "maskapai": { "nama": "Saudia Airlines", "transit": false },
+  "hotelMakkah": { "nama": "Rayyana Ajyad", "bintang": 3, "jarakMeter": 650 },
+  "hotelMadinah": { "nama": "Al Eiman Taibah", "bintang": 3, "jarakMeter": 400 },
+  "pembimbingSlug": "ustadz-abdul-hakim",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan Jakarta – Jeddah", "deskripsi": "Kumpul di bandara, pengurusan dokumen, penerbangan langsung menuju Jeddah, lanjut darat ke Makkah." },
+    { "hari": 2, "judul": "Umroh pertama", "deskripsi": "Ambil miqat di Bir Ali/pesawat, tiba di Makkah, istirahat sejenak, lalu pelaksanaan umroh pertama dibimbing muthawif." },
+    { "hari": 3, "judul": "Ibadah mandiri di Masjidil Haram", "deskripsi": "Memperbanyak tawaf sunnah, shalat berjamaah, dan kajian singkat bersama pembimbing." },
+    { "hari": 4, "judul": "City tour Makkah", "deskripsi": "Ziarah Jabal Nur, Jabal Tsur, Arafah, Muzdalifah, Mina, dan Jabal Rahmah." },
+    { "hari": 5, "judul": "Perjalanan ke Madinah", "deskripsi": "Check-out, perjalanan darat ke Madinah, check-in hotel dekat Masjid Nabawi." },
+    { "hari": 6, "judul": "Raudhah & ziarah Madinah", "deskripsi": "Antre masuk Raudhah, ziarah Makam Rasulullah, Masjid Quba, Jabal Uhud, dan kebun kurma." },
+    { "hari": 7, "judul": "Ibadah di Masjid Nabawi", "deskripsi": "Menyempurnakan shalat arbain, memperbanyak doa dan dzikir." },
+    { "hari": 8, "judul": "Kembali ke Jeddah", "deskripsi": "Perjalanan ke Jeddah, city tour singkat, Masjid Terapung, persiapan pulang." },
+    { "hari": 9, "judul": "Tiba di Tanah Air", "deskripsi": "Penerbangan Jeddah – Jakarta, tiba dengan selamat, sesi foto bersama." }
+  ],
+  "termasuk": [
+    "Tiket pesawat PP kelas ekonomi",
+    "Visa umroh",
+    "Hotel Makkah & Madinah (kamar sesuai tipe dipilih)",
+    "Makan 3x sehari menu Indonesia",
+    "Bus AC selama di Arab Saudi",
+    "Pembimbing ibadah & muthawif berbahasa Indonesia",
+    "Air zamzam 5 liter",
+    "Perlengkapan: koper, tas, kain ihram/mukena, buku doa",
+    "Manasik umroh 2x sebelum berangkat",
+    "Handling bandara"
+  ],
+  "tidakTermasuk": [
+    "Biaya pembuatan paspor",
+    "Vaksin meningitis & polio",
+    "Suntik/tes kesehatan bila diperlukan",
+    "Kelebihan bagasi",
+    "Pengeluaran pribadi (laundry, telepon, oleh-oleh)",
+    "Tips untuk tour leader & sopir (opsional)"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan, nama minimal 3 kata",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (5 lembar)",
+    "Fotokopi KTP & Kartu Keluarga",
+    "Buku nikah (bagi pasangan suami istri)",
+    "Akta lahir & KK (bagi jamaah di bawah 17 tahun)"
+  ],
+  "dpMinimum": 5000000,
+  "tenorCicilan": [3, 6, 9, 12],
+  "badge": "best-seller",
+  "galeri": [
+    { "src": "/images/paket/hemat-masjidil-haram.jpg", "alt": "Jamaah Luhas tawaf di pelataran Masjidil Haram saat pagi hari", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/hemat-hotel-makkah.jpg", "alt": "Lobi hotel Rayyana Ajyad dekat Masjidil Haram", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/hemat-rombongan.jpg", "alt": "Rombongan jamaah Luhas berfoto bersama di depan Masjid Nabawi", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-hemat-9h.pdf",
+  "ringkasan": "Paket paling terjangkau untuk umroh pertama. Penerbangan langsung, hotel dekat, tetap dibimbing muthawif berbahasa Indonesia.",
+  "kebijakanPembayaran": "DP minimal Rp 5.000.000 untuk mengunci seat dan harga. Pelunasan paling lambat H-40 sebelum keberangkatan. Pembatalan sebelum pengurusan visa dikenakan potongan administrasi; setelah visa terbit mengikuti ketentuan maskapai dan provider.",
+  "seo": {
+    "title": "Umroh Hemat 9 Hari Mulai Rp 27,5 Juta — Bisa Dicicil | Luhas",
+    "description": "Paket umroh hemat 9 hari penerbangan langsung, hotel dekat Masjidil Haram, dibimbing muthawif. Harga transparan, DP Rp 5 juta, cicilan sampai 12 bulan."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-20",
+  "unggulan": true
+}

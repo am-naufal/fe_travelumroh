@@ -1,0 +1,17 @@
+{
+  "slug": "rizky-pratama",
+  "nama": "Rizky Pratama",
+  "kota": "Bekasi",
+  "paketSlug": "umroh-hemat-9h",
+  "kutipan": "Awalnya ragu karena harga murah, tapi ternyata semua sesuai yang dijanjikan di website. Hotel benar 650 meter dari Masjidil Haram, jalan kaki 8 menit. Tim CS balas chat cepat banget.",
+  "foto": { "src": "/images/testimoni/rizky.jpg", "alt": "Rizky Pratama berfoto dengan latar menara jam Makkah", "width": 800, "height": 800 },
+  "rating": 5,
+  "tahun": 2026,
+  "izinPublikasi": true,
+  "video": {
+    "src": "/video/testimoni-rizky.mp4",
+    "poster": { "src": "/images/testimoni/rizky-poster.jpg", "alt": "Cuplikan video Rizky bercerita tentang pengalaman umroh hemat bersama Luhas", "width": 720, "height": 1280 },
+    "durasiDetik": 48,
+    "transkrip": "Nama saya Rizky dari Bekasi. Saya ikut paket umroh hemat Luhas. Yang bikin saya yakin, harganya transparan dari awal, nggak ada biaya tiba-tiba. Hotelnya dekat, pembimbingnya sabar. Insya Allah mau ajak orang tua tahun depan."
+  }
+}

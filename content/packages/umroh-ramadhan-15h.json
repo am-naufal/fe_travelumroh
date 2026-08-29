@@ -1,0 +1,63 @@
+{
+  "nama": "Umroh Ramadhan Full 15 Hari",
+  "slug": "umroh-ramadhan-15h",
+  "kategori": "ramadhan",
+  "hargaMulai": 46500000,
+  "hargaPerKamar": { "quad": 46500000, "triple": 49500000, "double": 55500000 },
+  "durasiHari": 15,
+  "keberangkatan": [
+    { "tanggal": "2027-02-16", "kuota": 50, "sisaSeat": 22, "status": "tersedia" },
+    { "tanggal": "2027-03-06", "kuota": 50, "sisaSeat": 5, "status": "hampir-penuh" }
+  ],
+  "kotaKeberangkatan": ["Jakarta", "Surabaya"],
+  "maskapai": { "nama": "Saudia Airlines", "transit": false },
+  "hotelMakkah": { "nama": "Jabal Omar Hyatt Regency", "bintang": 5, "jarakMeter": 250 },
+  "hotelMadinah": { "nama": "Dallah Taibah", "bintang": 4, "jarakMeter": 200 },
+  "pembimbingSlug": "ustadz-muhammad-fauzan",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan menuju Madinah", "deskripsi": "Penerbangan langsung, check-in hotel, buka puasa pertama di dekat Nabawi." },
+    { "hari": 3, "judul": "Ziarah Madinah", "deskripsi": "Raudhah, Masjid Quba, Jabal Uhud, Qiblatain, kebun kurma." },
+    { "hari": 6, "judul": "Menuju Makkah & umroh pertama", "deskripsi": "Ambil miqat, perjalanan ke Makkah, umroh pertama, sahur bersama." },
+    { "hari": 9, "judul": "I'tikaf & umroh sunnah", "deskripsi": "Panduan i'tikaf, umroh sunnah, kajian menyambut 10 malam terakhir." },
+    { "hari": 12, "judul": "10 malam terakhir", "deskripsi": "Fokus ibadah malam, qiyamul lail berjamaah di Masjidil Haram." },
+    { "hari": 15, "judul": "Kepulangan", "deskripsi": "Tawaf wada, perjalanan ke Jeddah, penerbangan pulang." }
+  ],
+  "termasuk": [
+    "Tiket pesawat PP kelas ekonomi penerbangan langsung",
+    "Visa umroh Ramadhan",
+    "Hotel bintang 4–5 dekat Masjid",
+    "Sahur & buka puasa prasmanan menu Indonesia",
+    "Bus AC, pembimbing ibadah & muthawif",
+    "Panduan i'tikaf 10 malam terakhir",
+    "Perlengkapan lengkap, air zamzam 5 liter"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Kelebihan bagasi",
+    "Pengeluaran pribadi & oleh-oleh",
+    "Tips tour leader dan sopir"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan, nama minimal 3 kata",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (5 lembar)",
+    "Fotokopi KTP, KK, buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 5000000,
+  "tenorCicilan": [3, 6, 9, 12],
+  "badge": "promo",
+  "galeri": [
+    { "src": "/images/paket/ramadhan-haram-malam.jpg", "alt": "Masjidil Haram dipadati jamaah saat qiyamul lail Ramadhan", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/ramadhan-bukapuasa.jpg", "alt": "Jamaah Luhas berbuka puasa bersama di pelataran Masjid Nabawi", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-ramadhan-15h.pdf",
+  "ringkasan": "Rasakan Ramadhan penuh di Tanah Suci — sahur, buka, tarawih, dan i'tikaf 10 malam terakhir dengan bimbingan intensif.",
+  "kebijakanPembayaran": "DP Rp 5.000.000 untuk kuota Ramadhan yang sangat terbatas. Pelunasan H-45 karena antrean visa Ramadhan. Tidak ada pengembalian DP untuk pembatalan H-30.",
+  "seo": {
+    "title": "Umroh Ramadhan Full 15 Hari 1448 H — I'tikaf 10 Malam | Luhas",
+    "description": "Umroh Ramadhan 15 hari penerbangan langsung, hotel dekat Masjid, panduan i'tikaf 10 malam terakhir. Mulai Rp 46,5 juta, DP Rp 5 juta."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-25",
+  "unggulan": true
+}

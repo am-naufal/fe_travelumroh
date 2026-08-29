@@ -1,0 +1,65 @@
+{
+  "nama": "Umroh Plus Turki 14 Hari",
+  "slug": "umroh-plus-turki-14h",
+  "kategori": "plus-turki",
+  "hargaMulai": 42900000,
+  "hargaPerKamar": { "quad": 42900000, "triple": 44900000, "double": 48900000 },
+  "durasiHari": 14,
+  "keberangkatan": [
+    { "tanggal": "2026-10-20", "kuota": 35, "sisaSeat": 15, "status": "tersedia" },
+    { "tanggal": "2026-12-15", "kuota": 35, "sisaSeat": 6, "status": "hampir-penuh" }
+  ],
+  "kotaKeberangkatan": ["Jakarta"],
+  "maskapai": { "nama": "Turkish Airlines", "transit": true },
+  "hotelMakkah": { "nama": "Hilton Suites Makkah", "bintang": 5, "jarakMeter": 300 },
+  "hotelMadinah": { "nama": "Millennium Al Aqeeq", "bintang": 5, "jarakMeter": 350 },
+  "pembimbingSlug": "ustadz-abdul-hakim",
+  "itinerary": [
+    { "hari": 1, "judul": "Jakarta – Istanbul", "deskripsi": "Penerbangan menuju Istanbul via Turkish Airlines, tiba dan check-in hotel." },
+    { "hari": 2, "judul": "Istanbul tour", "deskripsi": "Blue Mosque, Hagia Sophia, Topkapi Palace, Grand Bazaar, dan Bosphorus cruise." },
+    { "hari": 3, "judul": "Bursa", "deskripsi": "Perjalanan ke Bursa, Ulu Camii, Green Mosque, teleferik Uludag." },
+    { "hari": 4, "judul": "Istanbul – Madinah", "deskripsi": "Penerbangan menuju Madinah, mulai rangkaian ibadah di Masjid Nabawi." },
+    { "hari": 6, "judul": "Ziarah Madinah", "deskripsi": "Raudhah, Masjid Quba, Jabal Uhud, Qiblatain." },
+    { "hari": 8, "judul": "Menuju Makkah & umroh", "deskripsi": "Ambil miqat, perjalanan ke Makkah, umroh pertama." },
+    { "hari": 12, "judul": "City tour Makkah & umroh sunnah", "deskripsi": "Ziarah situs bersejarah Makkah dan umroh sunnah." },
+    { "hari": 14, "judul": "Kepulangan", "deskripsi": "Tawaf wada, perjalanan ke Jeddah, penerbangan pulang ke Jakarta." }
+  ],
+  "termasuk": [
+    "Tiket pesawat internasional & domestik Turki",
+    "Visa umroh & visa Turki",
+    "Hotel bintang 5 di Turki, Makkah, dan Madinah",
+    "Makan 3x sehari",
+    "Tour Turki lengkap dengan tour guide berbahasa Indonesia",
+    "Bus AC, pembimbing ibadah & muthawif",
+    "Perlengkapan lengkap, air zamzam 5 liter"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Kelebihan bagasi",
+    "Pengeluaran pribadi & oleh-oleh",
+    "Tips guide lokal Turki dan sopir"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (6 lembar)",
+    "Fotokopi KTP, KK, buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 10000000,
+  "tenorCicilan": [3, 6, 9],
+  "badge": "promo",
+  "galeri": [
+    { "src": "/images/paket/turki-blue-mosque.jpg", "alt": "Jamaah Luhas berfoto di depan Blue Mosque Istanbul saat cerah", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/turki-bosphorus.jpg", "alt": "Pemandangan Selat Bosphorus dari atas kapal pesiar wisata", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-plus-turki-14h.pdf",
+  "ringkasan": "Gabungkan ibadah umroh dengan wisata sejarah Islam di Istanbul dan Bursa. Hotel bintang 5 sepanjang perjalanan.",
+  "kebijakanPembayaran": "DP Rp 10.000.000. Pelunasan H-40. Visa Turki diproses setelah pelunasan minimal 60%.",
+  "seo": {
+    "title": "Umroh Plus Turki 14 Hari — Istanbul & Bursa, Hotel Bintang 5 | Luhas",
+    "description": "Umroh 14 hari plus wisata Turki: Istanbul, Bursa, hotel bintang 5, Turkish Airlines. Harga transparan mulai Rp 42,9 juta, bisa dicicil."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-18",
+  "unggulan": false
+}

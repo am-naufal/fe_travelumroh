@@ -1,26 +1,202 @@
 @import "tailwindcss";
 
+/*
+  Design tokens — PRD §9. Semua nilai berasal dari PRD; jangan ubah tanpa
+  memperbarui specs/002-design-system/spec.md.
+*/
+
+@theme {
+  /* Warna brand — PRD §9.2 */
+  --color-brand-primary: #0a5caf;
+  --color-brand-primary-dark: #07407c;
+  --color-brand-accent: #e8a00c;
+  --color-brand-ink: #0b1b3d;
+  --color-brand-muted: #5a6b8c;
+  --color-brand-surface: #ffffff;
+  --color-brand-bg: #f4f7fc;
+  --color-brand-success: #16a34a;
+  --color-brand-warning: #f59e0b;
+  --color-brand-danger: #dc2626;
+  --color-brand-border: #e2e8f5;
+
+  /* Tipografi — PRD §9.3 */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui,
+    sans-serif;
+
+  --text-xs: 0.75rem; /* 12 */
+  --text-sm: 0.875rem; /* 14 */
+  --text-base: 1rem; /* 16 */
+  --text-lg: 1.125rem; /* 18 */
+  --text-xl: 1.25rem; /* 20 */
+  --text-2xl: 1.5rem; /* 24 */
+  --text-3xl: 1.875rem; /* 30 */
+  --text-4xl: 2.25rem; /* 36 */
+  --text-5xl: 3rem; /* 48 */
+
+  /* Spacing skala 4px — PRD §9.4 (Tailwind default 0.25rem sudah 4px) */
+
+  /* Radius — PRD §9.4 */
+  --radius-btn: 12px;
+  --radius-card: 16px;
+  --radius-chip: 999px;
+
+  /* Elevasi — PRD §9.4: dua tingkat saja */
+  --shadow-sm: 0 1px 2px 0 rgb(11 27 61 / 0.06), 0 1px 3px 0 rgb(11 27 61 / 0.05);
+  --shadow-md: 0 4px 12px -2px rgb(11 27 61 / 0.10), 0 2px 6px -2px rgb(11 27 61 / 0.06);
+
+  /* Gerak — PRD §9.7 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-brand-bg);
+  --foreground: var(--color-brand-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: var(--color-brand-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem; /* offset header sticky untuk anchor */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 1rem; /* PRD §9.3: body min 16px di mobile */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--color-brand-ink);
+}
+
+/* Fokus terlihat jelas — PRD §13 */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Area sentuh minimal — PRD §13. Terapkan pada kontrol interaktif utama. */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Hormati prefers-reduced-motion — PRD §9.7, §13 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilitas kecil */
+.container-page {
+  width: 100%;
+  max-width: 80rem; /* 1280 */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Skip link — PRD §13 */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-brand-primary);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 12px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Prose ringkas untuk artikel & halaman legal */
+.prose-luhas {
+  color: var(--color-brand-ink);
+  line-height: 1.75;
+}
+.prose-luhas > * + * {
+  margin-top: 1rem;
+}
+.prose-luhas h2 {
+  font-size: var(--text-2xl);
+  margin-top: 2.5rem;
+}
+.prose-luhas h3 {
+  font-size: var(--text-xl);
+  margin-top: 2rem;
+}
+.prose-luhas ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.prose-luhas ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.prose-luhas a {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-luhas strong {
+  font-weight: 700;
+}
+.prose-luhas blockquote {
+  border-left: 3px solid var(--color-brand-accent);
+  padding-left: 1rem;
+  color: var(--color-brand-muted);
+}
+.prose-luhas table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.prose-luhas th,
+.prose-luhas td {
+  border: 1px solid var(--color-brand-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
 }

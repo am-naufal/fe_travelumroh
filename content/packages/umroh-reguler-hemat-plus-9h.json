@@ -1,0 +1,64 @@
+{
+  "nama": "Umroh Reguler Plus 10 Hari",
+  "slug": "umroh-reguler-plus-10h",
+  "kategori": "reguler",
+  "hargaMulai": 31500000,
+  "hargaPerKamar": { "quad": 31500000, "triple": 33500000, "double": 37500000 },
+  "durasiHari": 10,
+  "keberangkatan": [
+    { "tanggal": "2026-09-29", "kuota": 40, "sisaSeat": 14, "status": "tersedia" },
+    { "tanggal": "2026-11-17", "kuota": 40, "sisaSeat": 25, "status": "tersedia" },
+    { "tanggal": "2027-01-12", "kuota": 40, "sisaSeat": 31, "status": "tersedia" }
+  ],
+  "kotaKeberangkatan": ["Jakarta", "Bandung", "Surabaya"],
+  "maskapai": { "nama": "Saudia Airlines", "transit": false },
+  "hotelMakkah": { "nama": "Al Kiswah Towers", "bintang": 4, "jarakMeter": 500 },
+  "hotelMadinah": { "nama": "Al Haram Hotel", "bintang": 4, "jarakMeter": 220 },
+  "pembimbingSlug": "ustadzah-nur-aisyah",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan Jakarta – Madinah", "deskripsi": "Penerbangan langsung menuju Madinah, check-in hotel dekat Nabawi." },
+    { "hari": 2, "judul": "Mulai shalat arbain & ziarah", "deskripsi": "Raudhah, Masjid Quba, Jabal Uhud." },
+    { "hari": 4, "judul": "Menuju Makkah & umroh pertama", "deskripsi": "Ambil miqat di Bir Ali, umroh pertama dibimbing muthawif." },
+    { "hari": 6, "judul": "Umroh sunnah & city tour", "deskripsi": "Umroh sunnah dari Tan'im, ziarah Jabal Nur, Arafah, Mina." },
+    { "hari": 9, "judul": "Tawaf wada & ke Jeddah", "deskripsi": "Tawaf perpisahan, perjalanan ke Jeddah, city tour singkat." },
+    { "hari": 10, "judul": "Tiba di Tanah Air", "deskripsi": "Penerbangan pulang, tiba dengan selamat." }
+  ],
+  "termasuk": [
+    "Tiket pesawat PP kelas ekonomi penerbangan langsung",
+    "Visa umroh",
+    "Hotel bintang 4 (kamar sesuai tipe dipilih)",
+    "Makan 3x sehari menu Indonesia",
+    "Bus AC & city tour Makkah–Madinah",
+    "Pembimbing ibadah & muthawif",
+    "Perlengkapan lengkap, air zamzam 5 liter",
+    "Manasik 2x sebelum berangkat"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Kelebihan bagasi",
+    "Pengeluaran pribadi & oleh-oleh",
+    "Tips tour leader dan sopir"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan, nama minimal 3 kata",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (5 lembar)",
+    "Fotokopi KTP, KK, buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 5000000,
+  "tenorCicilan": [3, 6, 9, 12],
+  "galeri": [
+    { "src": "/images/paket/reguler-plus-haram.jpg", "alt": "Menara jam Makkah terlihat dari jalan menuju Masjidil Haram", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/reguler-plus-jamaah.jpg", "alt": "Dua jamaah Luhas berjalan menuju gerbang Masjid Nabawi", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-reguler-plus-10h.pdf",
+  "ringkasan": "Naik sedikit dari paket hemat: hotel bintang 4, banyak pilihan kota keberangkatan, dan durasi 10 hari yang pas.",
+  "kebijakanPembayaran": "DP Rp 5.000.000 mengunci harga dan seat. Pelunasan H-40 sebelum keberangkatan.",
+  "seo": {
+    "title": "Umroh Reguler Plus 10 Hari Hotel Bintang 4 — Mulai Rp 31,5 Juta | Luhas",
+    "description": "Paket umroh 10 hari hotel bintang 4 dekat Masjid, penerbangan langsung Saudia, banyak kota keberangkatan. Harga transparan, bisa dicicil 12 bulan."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-21",
+  "unggulan": false
+}

@@ -5,14 +5,16 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+  {
+    rules: {
+      // Pola sah di aplikasi ini: membaca state khusus-klien (localStorage,
+      // pathname, Embla API) SETELAH mount untuk keamanan SSR/hidrasi.
+      // Rule ini menandainya sebagai potensi cascading render; kami turunkan
+      // ke peringatan, bukan error yang memblokir build.
+      "react-hooks/set-state-in-effect": "warn",
+    },
+  },
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "scripts/**"]),
 ]);
 
 export default eslintConfig;

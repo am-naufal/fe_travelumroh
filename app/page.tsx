@@ -1,69 +1,87 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { getActivePackages, getFeaturedPackages, getArticles, getVideoTestimonials, getFeaturedFaq, getSettings } from "@/lib/cms";
+import { toPackageView, keberangkatanTerdekat } from "@/lib/package-view";
+import { aggregateRating } from "@/lib/cms/testimonials";
+import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { travelAgencyLd } from "@/lib/jsonld";
+import { Hero } from "@/components/sections/hero";
+import { TrustBar } from "@/components/sections/trust-bar";
+import { FeaturedPackages } from "@/components/sections/featured-packages";
+import { WhyLuhas, RegistrationSteps, ClosingCta } from "@/components/sections/home-blocks";
+import { MiniCalculator } from "@/components/sections/mini-calculator";
+import { VideoTestimonials } from "@/components/sections/video-testimonials";
+import { SocialFeed } from "@/components/sections/social-feed";
+import { LatestArticles } from "@/components/sections/latest-articles";
+import { FaqPreview } from "@/components/sections/faq-preview";
 
-export default function Home() {
+// PRD §10.2 — SSG + ISR 300 detik
+export const revalidate = 300;
+
+export const metadata: Metadata = pageMetadata({
+  title: "Umroh Resmi, Harga Transparan & Bisa Dicicil",
+  description:
+    "Umroh tanpa drama biaya. Travel umroh berizin resmi Kemenag untuk muslim muda — harga lengkap dari awal, hotel dekat, tim yang membalas chat.",
+  path: "/",
+});
+
+export default async function HomePage() {
+  const [featured, active, articles, videos, faq, settings, rating] = await Promise.all([
+    getFeaturedPackages(4),
+    getActivePackages(),
+    getArticles(),
+    getVideoTestimonials(),
+    getFeaturedFaq(5),
+    getSettings(),
+    aggregateRating(),
+  ]);
+
+  const heroHarga = Math.min(...active.map((p) => p.hargaMulai));
+  const calcOptions = active.map((p) => {
+    const k = keberangkatanTerdekat(p);
+    return {
+      slug: p.slug,
+      nama: p.nama,
+      harga: p.hargaMulai,
+      dpMinimum: p.dpMinimum,
+      tenor: p.tenorCicilan,
+      tanggalTerdekat: k?.tanggal ?? null,
+    };
+  });
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <JsonLd
+        data={travelAgencyLd({
+          nama: settings.namaLegal,
+          deskripsi: settings.deskripsiSingkat,
+          telepon: `+${settings.kontak.waUtama}`,
+          alamat: settings.kontak.alamat,
+          skPpiu: settings.legalitas.skPpiu,
+          rating: { nilai: rating.nilai || settings.ratingGoogle.nilai, jumlah: rating.jumlah || settings.ratingGoogle.jumlah },
+          sosial: Object.values(settings.sosial).filter(Boolean) as string[],
+        })}
+      />
+
+      <Hero
+        hargaMulai={heroHarga}
+        gambar={{
+          src: "/images/hero-jamaah.jpg",
+          alt: "Jamaah Luhas berdoa bersama menghadap Ka'bah saat matahari terbit",
+          width: 1200,
+          height: 900,
+        }}
+      />
+      <TrustBar settings={settings} />
+      <FeaturedPackages pakets={featured.map(toPackageView)} />
+      <WhyLuhas />
+      <MiniCalculator pakets={calcOptions} />
+      <VideoTestimonials testimoni={videos} />
+      <SocialFeed />
+      <RegistrationSteps />
+      <LatestArticles artikel={articles} />
+      <FaqPreview items={faq} />
+      <ClosingCta />
+    </>
   );
 }

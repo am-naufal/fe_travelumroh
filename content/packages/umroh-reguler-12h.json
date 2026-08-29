@@ -1,0 +1,69 @@
+{
+  "nama": "Umroh Reguler 12 Hari",
+  "slug": "umroh-reguler-12h",
+  "kategori": "reguler",
+  "hargaMulai": 33900000,
+  "hargaPerKamar": { "quad": 33900000, "triple": 35900000, "double": 39900000 },
+  "durasiHari": 12,
+  "keberangkatan": [
+    { "tanggal": "2026-10-06", "kuota": 40, "sisaSeat": 18, "status": "tersedia" },
+    { "tanggal": "2026-11-24", "kuota": 40, "sisaSeat": 9, "status": "tersedia" },
+    { "tanggal": "2027-01-19", "kuota": 40, "sisaSeat": 33, "status": "tersedia" }
+  ],
+  "kotaKeberangkatan": ["Jakarta", "Surabaya", "Medan"],
+  "maskapai": { "nama": "Garuda Indonesia", "transit": false },
+  "hotelMakkah": { "nama": "Swissôtel Al Maqam", "bintang": 5, "jarakMeter": 180 },
+  "hotelMadinah": { "nama": "Frontel Al Harithia", "bintang": 4, "jarakMeter": 250 },
+  "pembimbingSlug": "ustadzah-nur-aisyah",
+  "itinerary": [
+    { "hari": 1, "judul": "Keberangkatan menuju Madinah", "deskripsi": "Penerbangan langsung ke Madinah, check-in hotel dekat Masjid Nabawi." },
+    { "hari": 2, "judul": "Memulai shalat arbain", "deskripsi": "Orientasi kawasan Nabawi, mulai menghitung shalat arbain berjamaah." },
+    { "hari": 3, "judul": "Ziarah Kota Madinah", "deskripsi": "Raudhah, Masjid Quba, Jabal Uhud, Masjid Qiblatain, kebun kurma." },
+    { "hari": 4, "judul": "Ibadah mandiri di Nabawi", "deskripsi": "Kajian pagi, memperbanyak ibadah dan doa di Masjid Nabawi." },
+    { "hari": 5, "judul": "Menuju Makkah & umroh pertama", "deskripsi": "Ambil miqat di Bir Ali, perjalanan ke Makkah, pelaksanaan umroh pertama." },
+    { "hari": 6, "judul": "Umroh sunnah & kajian", "deskripsi": "Umroh sunnah dari Tan'im/Ji'ranah, kajian manasik lanjutan." },
+    { "hari": 8, "judul": "City tour Makkah", "deskripsi": "Jabal Nur, Jabal Tsur, Arafah, Mina, Jabal Rahmah, percetakan Al-Qur'an." },
+    { "hari": 11, "judul": "Persiapan kepulangan", "deskripsi": "Tawaf wada, perjalanan ke Jeddah, city tour, penerbangan pulang." },
+    { "hari": 12, "judul": "Tiba di Tanah Air", "deskripsi": "Tiba dengan selamat, sesi foto dan doa penutup bersama pembimbing." }
+  ],
+  "termasuk": [
+    "Tiket pesawat PP Garuda kelas ekonomi",
+    "Visa umroh & asuransi perjalanan",
+    "Hotel bintang 4–5 dekat Masjid (sesuai tipe kamar)",
+    "Makan 3x sehari prasmanan menu Indonesia",
+    "Bus AC & city tour Makkah–Madinah",
+    "Pembimbing ibadah & muthawif",
+    "Air zamzam 5 liter, perlengkapan lengkap",
+    "Manasik 2x + grup WhatsApp pra-keberangkatan"
+  ],
+  "tidakTermasuk": [
+    "Pembuatan paspor & vaksin meningitis",
+    "Kelebihan bagasi",
+    "Pengeluaran pribadi & oleh-oleh",
+    "Tips tour leader dan sopir (opsional)"
+  ],
+  "syaratDokumen": [
+    "Paspor berlaku minimal 8 bulan, nama minimal 3 kata",
+    "Kartu vaksin meningitis (ICV)",
+    "Pas foto berwarna latar putih 4x6 (5 lembar)",
+    "Fotokopi KTP, KK, dan buku nikah bila berpasangan"
+  ],
+  "dpMinimum": 7500000,
+  "tenorCicilan": [3, 6, 9, 12],
+  "badge": "best-seller",
+  "galeri": [
+    { "src": "/images/paket/reguler-nabawi.jpg", "alt": "Payung raksasa Masjid Nabawi terbuka di pagi hari dengan jamaah berjalan", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/reguler-hotel.jpg", "alt": "Kamar hotel bintang lima Swissôtel Al Maqam menghadap Masjidil Haram", "width": 1600, "height": 1000 },
+    { "src": "/images/paket/reguler-bus.jpg", "alt": "Jamaah Luhas menaiki bus AC untuk perjalanan Makkah ke Madinah", "width": 1600, "height": 1000 }
+  ],
+  "brosurPdf": "/brosur/umroh-reguler-12h.pdf",
+  "ringkasan": "Pilihan paling seimbang: penerbangan Garuda langsung, hotel dekat Masjid, dan durasi 12 hari yang lapang untuk beribadah tanpa terburu-buru.",
+  "kebijakanPembayaran": "DP Rp 7.500.000 mengunci harga dan seat. Pelunasan H-40. Perubahan tanggal keberangkatan mengikuti ketersediaan dan selisih harga tiket.",
+  "seo": {
+    "title": "Umroh Reguler 12 Hari Garuda Langsung — Hotel Dekat Masjid | Luhas",
+    "description": "Paket umroh 12 hari dengan Garuda Indonesia penerbangan langsung, hotel bintang 4–5 dekat Masjid. Harga transparan mulai Rp 33,9 juta, bisa dicicil."
+  },
+  "aktif": true,
+  "diperbaruiPada": "2026-08-22",
+  "unggulan": true
+}

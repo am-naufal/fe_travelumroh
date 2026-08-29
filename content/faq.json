@@ -1,0 +1,164 @@
+[
+  {
+    "pertanyaan": "Berapa total biaya yang harus saya siapkan untuk umroh?",
+    "jawaban": "Harga paket yang tertera di kartu sudah mencakup tiket, visa, hotel, makan, transportasi, dan pembimbing. Di luar itu Anda menyiapkan biaya pembuatan paspor (sekitar Rp 350.000–650.000), vaksin meningitis (sekitar Rp 300.000–500.000), serta uang saku pribadi untuk oleh-oleh dan keperluan lain. Semua rincian 'sudah termasuk' dan 'belum termasuk' tercantum lengkap di setiap halaman paket.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Apakah harga bisa berubah setelah saya mendaftar?",
+    "jawaban": "Harga dikunci begitu Anda membayar DP. Sebelum DP, harga mengikuti kurs dan ketersediaan tiket maskapai sehingga bisa berubah sewaktu-waktu. Karena itu kami sarankan mengunci seat lebih awal bila tanggalnya sudah pasti.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Apakah umroh bisa dicicil? Bagaimana skemanya?",
+    "jawaban": "Bisa. Cicilan dikelola internal Luhas, bukan lembaga pembiayaan pihak ketiga, dan tidak ada bunga — sisa setelah DP dibagi rata sepanjang tenor 3, 6, 9, atau 12 bulan. Pelunasan paling lambat H-40 sebelum keberangkatan. Gunakan halaman Simulasi Cicilan untuk memperkirakan angsuran; angka final dikonfirmasi tim setelah konsultasi.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Berapa DP minimum untuk mengunci seat?",
+    "jawaban": "DP minimum berbeda per paket, umumnya mulai Rp 5.000.000 untuk paket hemat dan reguler, hingga Rp 15.000.000 untuk paket VIP. Nominal pastinya tertera di setiap halaman paket pada bagian kebijakan pembayaran.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Metode pembayaran apa saja yang tersedia?",
+    "jawaban": "Transfer bank ke rekening resmi atas nama PT Luhas Wisata Amanah. Kami tidak pernah meminta transfer ke rekening pribadi. Setiap pembayaran akan mendapat kuitansi resmi. Pembayaran kartu kredit dan e-wallet sedang dalam proses dan akan diumumkan.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah ada biaya tambahan untuk kamar berdua (double)?",
+    "jawaban": "Ya. Semakin sedikit orang per kamar, semakin tinggi harganya. Harga quad (4 orang), triple (3 orang), dan double (2 orang) tercantum berdampingan dalam tabel di setiap halaman paket sehingga Anda bisa membandingkan sebelum memutuskan.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Dokumen apa saja yang harus saya siapkan?",
+    "jawaban": "Paspor berlaku minimal 8 bulan dengan nama minimal 3 kata, kartu vaksin meningitis (ICV), pas foto berwarna latar putih ukuran 4x6, fotokopi KTP dan Kartu Keluarga, serta buku nikah bagi pasangan suami istri. Untuk jamaah di bawah 17 tahun dilengkapi akta kelahiran.",
+    "grup": "Dokumen",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Nama di paspor saya hanya dua kata, apakah bisa berangkat?",
+    "jawaban": "Sistem visa Arab Saudi mensyaratkan nama minimal 3 kata. Bila nama Anda kurang dari 3 kata, Anda perlu menambah nama ayah atau kakek melalui pengurusan di kantor imigrasi. Tim kami akan memandu langkahnya sejak awal pendaftaran.",
+    "grup": "Dokumen",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Berapa lama proses pembuatan visa umroh?",
+    "jawaban": "Visa umroh biasanya terbit 7–14 hari kerja setelah dokumen lengkap dan pembayaran mencapai ambang yang ditentukan. Untuk musim ramai seperti Ramadhan, prosesnya bisa lebih lama sehingga pelunasan dimajukan.",
+    "grup": "Dokumen",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah Luhas membantu pengurusan paspor?",
+    "jawaban": "Kami tidak menerbitkan paspor, tetapi tim akan memberikan panduan lengkap: cara membuat janji temu online, dokumen yang dibawa, dan tips agar prosesnya lancar. Untuk rombongan besar kami bisa mendampingi ke kantor imigrasi.",
+    "grup": "Dokumen",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Vaksin meningitis wajib atau tidak?",
+    "jawaban": "Wajib. Kartu vaksin meningitis (ICV) adalah syarat masuk Arab Saudi. Vaksin tersedia di kantor kesehatan pelabuhan (KKP) dan sebagian rumah sakit. Idealnya dilakukan minimal 10 hari sebelum keberangkatan.",
+    "grup": "Dokumen",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Berapa hari sebelum berangkat saya harus melunasi?",
+    "jawaban": "Pelunasan paling lambat H-40 sebelum keberangkatan untuk paket reguler, dan H-45 untuk keberangkatan Ramadhan. Ini memberi waktu cukup untuk pengurusan visa dan penerbitan tiket.",
+    "grup": "Keberangkatan",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Apakah keberangkatan benar-benar pasti terjadi?",
+    "jawaban": "Ya. Seat dan tiket dikunci sejak awal, dan Luhas berizin PPIU resmi dari Kemenag (SK PPIU No. 1234 Tahun 2023) yang dapat diverifikasi di situs Kemenag. Jika karena keadaan luar biasa keberangkatan harus digeser, Anda mendapat pilihan tanggal pengganti atau pengembalian dana sesuai ketentuan.",
+    "grup": "Keberangkatan",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Dari kota mana saja keberangkatannya?",
+    "jawaban": "Mayoritas paket berangkat dari Jakarta, sebagian juga tersedia dari Surabaya, Medan, Bandung, dan Yogyakarta. Kota keberangkatan tertera pada setiap kartu dan halaman paket, serta bisa difilter di halaman daftar paket.",
+    "grup": "Keberangkatan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah ada manasik sebelum berangkat?",
+    "jawaban": "Ada, minimal 2 kali pertemuan manasik yang dibimbing pembimbing ibadah, ditambah grup WhatsApp untuk tanya jawab dan pengingat persiapan. Bagi yang di luar kota, sesi manasik juga disiarkan daring.",
+    "grup": "Keberangkatan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Berapa berat bagasi yang diperbolehkan?",
+    "jawaban": "Umumnya 1 koper bagasi maksimal 25–30 kg (tergantung maskapai) dan 1 tas kabin 7 kg. Kelebihan bagasi dikenakan biaya oleh maskapai dan menjadi tanggungan pribadi. Rincian pasti diberikan saat manasik.",
+    "grup": "Keberangkatan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah lansia dan penyandang disabilitas bisa ikut?",
+    "jawaban": "Bisa. Kami menyediakan pendampingan khusus lansia, bantuan kursi roda di bandara dan area Masjid, serta pengaturan kamar yang memudahkan. Sampaikan kebutuhan khusus saat mendaftar agar tim menyiapkannya lebih awal.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Seberapa jauh hotel dari Masjidil Haram dan Masjid Nabawi?",
+    "jawaban": "Setiap paket mencantumkan nama hotel, jumlah bintang, dan jarak dalam meter ke Masjid. Paket hemat sekitar 500–650 meter, paket reguler dan plus 120–350 meter, dan paket VIP di bawah 100 meter. Informasi ini tidak kami sembunyikan.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Bagaimana pengaturan makan selama di sana?",
+    "jawaban": "Makan 3 kali sehari secara prasmanan dengan menu Indonesia (nasi, sayur, lauk, buah). Untuk keberangkatan Ramadhan, jadwal sahur dan buka puasa diatur agar jamaah tidak menunggu lama.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah ada muthawif yang berbahasa Indonesia?",
+    "jawaban": "Ya. Setiap rombongan didampingi pembimbing ibadah dan muthawif berbahasa Indonesia yang memandu manasik, ziarah, dan menjawab pertanyaan seputar ibadah selama di Tanah Suci.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Bagaimana jika saya sakit selama di Arab Saudi?",
+    "jawaban": "Pembimbing membawa perlengkapan P3K dasar dan akan mengantar jamaah ke klinik atau rumah sakit terdekat bila diperlukan. Paket tertentu menyertakan asuransi perjalanan; untuk paket lain kami sarankan menambah asuransi mandiri.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah bisa request kamar sekamar dengan keluarga atau teman?",
+    "jawaban": "Bisa. Sampaikan nama teman sekamar saat pendaftaran. Untuk pasangan suami istri yang ingin sekamar berdua, pilih tipe kamar double. Jamaah yang berangkat sendiri akan disatukan dengan jamaah lain sesama jenis kelamin.",
+    "grup": "Selama di Tanah Suci",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Bagaimana kebijakan pembatalan dan pengembalian dana?",
+    "jawaban": "Pembatalan sebelum pengurusan visa dikenakan potongan biaya administrasi. Setelah visa terbit atau tiket diterbitkan, potongan mengikuti ketentuan maskapai dan provider Saudi yang umumnya tidak dapat dikembalikan. Rincian lengkap ada di halaman Syarat & Ketentuan serta pada setiap paket.",
+    "grup": "Kebijakan",
+    "unggulan": true
+  },
+  {
+    "pertanyaan": "Apakah DP bisa dikembalikan jika saya batal?",
+    "jawaban": "DP berfungsi mengunci seat dan harga. Untuk pembatalan sepihak, DP umumnya tidak dikembalikan penuh karena sebagian sudah dipakai untuk booking. Untuk keberangkatan Ramadhan, DP tidak dapat dikembalikan bila pembatalan terjadi pada H-30. Ketentuan detail per paket tercantum di kebijakan pembayarannya.",
+    "grup": "Kebijakan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Bagaimana Luhas menjaga data pribadi saya?",
+    "jawaban": "Data yang Anda kirim melalui formulir hanya digunakan untuk menindaklanjuti minat umroh Anda dan disimpan seperlunya. Anda dapat meminta penghapusan data kapan saja. Selengkapnya di halaman Kebijakan Privasi yang disusun selaras UU Perlindungan Data Pribadi.",
+    "grup": "Kebijakan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Bisakah saya mengganti tanggal keberangkatan setelah mendaftar?",
+    "jawaban": "Bisa, selama kuota tanggal tujuan masih tersedia. Perubahan tanggal dapat menimbulkan selisih harga tiket dan hotel yang menjadi tanggungan jamaah. Ajukan perubahan sedini mungkin melalui tim CS.",
+    "grup": "Kebijakan",
+    "unggulan": false
+  },
+  {
+    "pertanyaan": "Apakah anak-anak boleh ikut umroh?",
+    "jawaban": "Boleh. Anak-anak dikenakan harga sesuai tipe kamar yang ditempati bersama orang tua. Untuk bayi biasanya ada harga khusus tanpa seat pesawat terpisah. Konsultasikan usia anak saat mendaftar agar kami hitungkan.",
+    "grup": "Biaya & Pembayaran",
+    "unggulan": false
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "slug": "sari-melati",
+  "nama": "Sari Melati",
+  "kota": "Depok",
+  "paketSlug": "umroh-ramadhan-15h",
+  "kutipan": "Ramadhan di Tanah Suci itu pengalaman yang tidak tergantikan. Panduan i'tikaf dari Ustadz Fauzan sangat membantu. Jadwal sahur dan buka bersama diatur rapi, tidak pernah kelaparan menunggu.",
+  "foto": { "src": "/images/testimoni/sari.jpg", "alt": "Sari Melati membaca Al-Qur'an di pelataran Masjidil Haram saat Ramadhan", "width": 800, "height": 800 },
+  "rating": 5,
+  "tahun": 2026,
+  "izinPublikasi": true,
+  "video": {
+    "src": "/video/testimoni-sari.mp4",
+    "poster": { "src": "/images/testimoni/sari-poster.jpg", "alt": "Cuplikan video Sari bercerita tentang umroh Ramadhan bersama Luhas", "width": 720, "height": 1280 },
+    "durasiDetik": 61,
+    "transkrip": "Saya Sari dari Depok. Umroh Ramadhan bareng Luhas benar-benar khusyuk. I'tikaf 10 malam terakhir dibimbing langsung. Makan sahur dan buka terjadwal rapi. Recommended banget buat yang mau Ramadhan penuh di sana."
+  }
+}
