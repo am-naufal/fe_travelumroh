@@ -24,7 +24,7 @@ type Props = Kind & {
   ctaPosition: string;
   className?: string;
   size?: "sm" | "md" | "lg";
-  variant?: "whatsapp" | "primary" | "secondary" | "ghost";
+  variant?: "whatsapp" | "primary" | "secondary" | "ghost" | "accent";
   withIcon?: boolean;
 };
 
