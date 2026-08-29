@@ -75,7 +75,7 @@ export function InstallmentCalculator({ pakets = [], lockedPaket, variant = "ful
         variant === "mini" && "p-4",
       )}
     >
-      {variant !== "mini" && (
+      {variant === "full" && (
         <h3 className="font-heading text-lg font-bold text-brand-ink">Simulasi Cicilan</h3>
       )}
 

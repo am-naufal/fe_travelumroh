@@ -23,6 +23,9 @@ export interface PackageView {
   tanggalTerdekat: string | null;
   sisaSeatTerdekat: number | null;
   totalSisaSeat: number;
+  /** Semua bulan keberangkatan yang belum tutup, format "YYYY-MM". */
+  bulanKeberangkatan: string[];
+  jumlahKeberangkatan: number;
   badge: "promo" | "best-seller" | "hampir-penuh" | null;
   termasuk: string[];
   tenorCicilan: number[];
@@ -79,6 +82,14 @@ export function toPackageView(p: Paket): PackageView {
     tanggalTerdekat: k?.tanggal ?? null,
     sisaSeatTerdekat: k?.sisaSeat ?? null,
     totalSisaSeat: totalSisaSeat(p),
+    bulanKeberangkatan: [
+      ...new Set(
+        p.keberangkatan
+          .filter((d) => d.status !== "tutup")
+          .map((d) => d.tanggal.slice(0, 7)),
+      ),
+    ].sort(),
+    jumlahKeberangkatan: p.keberangkatan.filter((d) => d.status !== "tutup").length,
     badge: badgeEfektif(p),
     termasuk: p.termasuk,
     tenorCicilan: p.tenorCicilan,

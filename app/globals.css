@@ -138,6 +138,13 @@ h6 {
   overflow: hidden;
 }
 
+/* Sembunyikan FAB WA saat sticky CTA halaman detail aktif (mobile) — PRD §7.3 */
+@media (max-width: 1023px) {
+  body[data-sticky-cta="on"] [data-wa-fab] {
+    display: none;
+  }
+}
+
 /* Skip link — PRD §13 */
 .skip-link {
   position: absolute;
