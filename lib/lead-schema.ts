@@ -4,9 +4,9 @@ import { z } from "zod";
 
 export const bulanBerangkatOptions = [
   "Belum tahu",
-  "1–3 bulan lagi",
-  "4–6 bulan lagi",
-  "7–12 bulan lagi",
+  "1-3 bulan lagi",
+  "4-6 bulan lagi",
+  "7-12 bulan lagi",
   "Lebih dari 1 tahun",
 ] as const;
 
@@ -47,7 +47,9 @@ export const leadSchema = z.object({
     message: "Anda harus menyetujui kebijakan privasi",
   }),
   // Anti-spam (PRD §7.11): honeypot + token Turnstile
-  website: z.string().max(0).optional(), // honeypot — harus kosong
+  // Honeypot: field tersembunyi. Manusia tak mengisinya; bot sering mengisi.
+  // Diperiksa di route handler (bukan ditolak schema) agar bisa "pura-pura sukses".
+  website: z.string().optional(),
   turnstileToken: z.string().optional(),
   utm: z.record(z.string(), z.string()).optional(),
 });
