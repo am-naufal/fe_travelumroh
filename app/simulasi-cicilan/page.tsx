@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Info } from "lucide-react";
 import { getActivePackages } from "@/lib/cms";
 import { keberangkatanTerdekat } from "@/lib/package-view";
 import { pageMetadata } from "@/lib/seo";
@@ -34,36 +33,31 @@ export default async function SimulasiCicilanPage() {
   return (
     <>
       <Breadcrumb items={[{ name: "Simulasi Cicilan", path: "/simulasi-cicilan" }]} />
-      <div className="container-page grid gap-8 py-8 lg:grid-cols-[1fr_1.2fr]">
-        <div>
-          <h1 className="font-heading text-2xl font-bold text-brand-ink sm:text-3xl">
-            Simulasi cicilan umroh
+      <div className="border-b border-brand-border bg-white py-8">
+        <div className="container-page">
+          <h1 className="font-heading text-[28px] font-extrabold text-brand-ink sm:text-4xl">
+            Simulasi Pembayaran Bertahap
           </h1>
-          <p className="mt-2 text-sm text-brand-muted">
-            Cicilan Luhas dikelola internal, <strong>tanpa bunga</strong>. Sisa harga setelah DP
-            dibagi rata sepanjang tenor yang dipilih.
+          <p className="mt-2.5 max-w-2xl text-[15px] leading-relaxed text-brand-muted sm:text-base">
+            Hitung sendiri perkiraan pembayaran Anda sebelum menghubungi kami.{" "}
+            <strong className="text-brand-ink">Tidak ada bunga</strong>, tidak ada biaya
+            administrasi.
           </p>
-
-          <div className="mt-6 space-y-4 text-sm">
-            <div className="flex gap-2 rounded-lg bg-brand-primary/5 p-4">
-              <Info className="size-4 shrink-0 text-brand-primary" aria-hidden />
-              <p className="text-brand-ink">
-                Pelunasan paling lambat <strong>H-{PELUNASAN_HARI_SEBELUM_BERANGKAT}</strong>{" "}
-                sebelum keberangkatan. Bila tanggal berangkat dekat, kalkulator otomatis
-                membatasi tenor dan memberi peringatan.
-              </p>
-            </div>
-            <p className="text-brand-muted">
-              Butuh skema khusus (mis. gabung tabungan keluarga)?{" "}
-              <Link href="/kontak" className="text-brand-primary underline">
-                Hubungi tim kami
-              </Link>{" "}
-              — semua angka final dikonfirmasi setelah konsultasi.
-            </p>
-          </div>
         </div>
+      </div>
 
+      <div className="container-page py-10">
         <InstallmentCalculator pakets={options} variant="full" />
+
+        <p className="mt-6 max-w-2xl text-sm text-brand-muted">
+          Pelunasan paling lambat H-{PELUNASAN_HARI_SEBELUM_BERANGKAT} sebelum keberangkatan. Bila
+          tanggal berangkat dekat, kalkulator otomatis membatasi tenor dan memberi peringatan.
+          Butuh skema khusus (mis. gabung tabungan keluarga)?{" "}
+          <Link href="/kontak" className="text-brand-primary underline">
+            Hubungi tim kami
+          </Link>{" "}
+          — semua angka final dikonfirmasi setelah konsultasi.
+        </p>
       </div>
     </>
   );
