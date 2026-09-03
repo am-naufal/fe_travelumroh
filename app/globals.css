@@ -71,36 +71,45 @@
   --foreground: var(--color-brand-ink);
 }
 
-* {
-  border-color: var(--color-brand-border);
-}
+/*
+  Gaya default elemen dibungkus @layer base agar utilitas Tailwind (mis.
+  text-white pada judul di atas latar gelap) tetap bisa menang. Tanpa
+  @layer, aturan CSS biasa di berkas ini SELALU menang atas layer manapun
+  dari Tailwind, terlepas dari urutan/spesifisitas — itu sebabnya <h1
+  className="text-white"> di atas hero gelap sempat tampil gelap juga.
+*/
+@layer base {
+  * {
+    border-color: var(--color-brand-border);
+  }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 5rem; /* offset header sticky untuk anchor */
-}
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem; /* offset header sticky untuk anchor */
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  font-size: 1rem; /* PRD §9.3: body min 16px di mobile */
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem; /* PRD §9.3: body min 16px di mobile */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-  color: var(--color-brand-ink);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--color-brand-ink);
+  }
 }
 
 /* Fokus terlihat jelas — PRD §13 */

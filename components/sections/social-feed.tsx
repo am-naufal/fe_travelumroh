@@ -39,8 +39,9 @@ export function SocialFeed() {
   return (
     <section className="container-page py-12">
       <SectionHeading
-        title="Dari feed kami"
-        subtitle="Ikuti keseharian keberangkatan dan tips di Instagram & TikTok."
+        kicker="Ikuti keseharian kami"
+        title="@luhas.umroh"
+        subtitle="Dokumentasi keberangkatan, manasik, dan kabar dari Tanah Suci."
       />
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {items === null
@@ -53,14 +54,16 @@ export function SocialFeed() {
                 href={item.permalink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex aspect-square flex-col justify-between overflow-hidden rounded-xl bg-brand-primary/10 p-3 text-brand-ink transition-colors hover:bg-brand-primary/15"
+                className="group relative flex aspect-square flex-col justify-between overflow-hidden rounded-xl p-3 text-white transition-opacity hover:opacity-90"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, var(--color-brand-ink) 0%, var(--color-brand-ink-2) 55%, var(--color-brand-primary) 100%)",
+                }}
               >
-                <span className="text-brand-primary">
-                  {item.platform === "tiktok" ? <TiktokIcon /> : <InstagramIcon />}
-                </span>
-                <span className="line-clamp-3 text-xs">{item.caption}</span>
+                <span>{item.platform === "tiktok" ? <TiktokIcon /> : <InstagramIcon />}</span>
+                <span className="line-clamp-3 text-xs text-white/85">{item.caption}</span>
                 <ExternalLink
-                  className="absolute right-2 top-2 size-3.5 text-brand-muted opacity-0 transition-opacity group-hover:opacity-100"
+                  className="absolute top-2 right-2 size-3.5 text-white/70 opacity-0 transition-opacity group-hover:opacity-100"
                   aria-hidden
                 />
                 <span className="sr-only">{item.thumbnailAlt}</span>

@@ -7,7 +7,8 @@ export function FeaturedPackages({ pakets }: { pakets: PackageView[] }) {
   return (
     <section className="container-page py-12">
       <SectionHeading
-        title="Paket unggulan"
+        kicker="Paket pilihan"
+        title="Paket yang paling sering diambil jamaah kami"
         subtitle="Dipilih tim kami untuk keseimbangan harga, jarak hotel, dan jadwal."
         link={{ href: "/paket", label: "Lihat semua paket" }}
       />

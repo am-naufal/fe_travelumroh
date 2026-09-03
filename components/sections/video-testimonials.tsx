@@ -14,8 +14,8 @@ export function VideoTestimonials({ testimoni }: { testimoni: Testimoni[] }) {
     <section className="bg-white">
       <div className="container-page py-12">
         <SectionHeading
-          title="Cerita jamaah"
-          subtitle="Testimoni dari jamaah yang sudah berangkat bersama Luhas."
+          kicker="Cerita jamaah"
+          title="Mereka yang sudah berangkat bersama kami"
           link={{ href: "/testimoni", label: "Semua testimoni" }}
         />
         <Carousel

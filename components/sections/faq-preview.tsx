@@ -15,8 +15,9 @@ export function FaqPreview({ items }: { items: FaqItem[] }) {
     <section className="container-page py-12">
       <JsonLd data={faqLd(items.map((i) => ({ pertanyaan: i.pertanyaan, jawaban: i.jawaban })))} />
       <SectionHeading
-        title="Pertanyaan yang sering diajukan"
-        link={{ href: "/faq", label: "Lihat semua FAQ" }}
+        kicker="Pertanyaan umum"
+        title="Yang paling sering ditanyakan"
+        link={{ href: "/faq", label: "Lihat Semua Pertanyaan" }}
       />
       <Accordion
         type="single"

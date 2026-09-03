@@ -8,8 +8,8 @@ export function LatestArticles({ artikel }: { artikel: Artikel[] }) {
   return (
     <section className="container-page py-12">
       <SectionHeading
-        title="Panduan umroh terbaru"
-        subtitle="Bacaan singkat untuk menyiapkan perjalanan Anda."
+        kicker="Panduan umroh"
+        title="Baca dulu sebelum memutuskan"
         link={{ href: "/panduan", label: "Semua panduan" }}
       />
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

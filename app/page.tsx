@@ -37,6 +37,10 @@ export default async function HomePage() {
   ]);
 
   const heroHarga = Math.min(...active.map((p) => p.hargaMulai));
+  const heroTanggalTerdekat = active
+    .map((p) => keberangkatanTerdekat(p)?.tanggal)
+    .filter((t): t is string => Boolean(t))
+    .sort()[0];
   const calcOptions = active.map((p) => {
     const k = keberangkatanTerdekat(p);
     return {
@@ -65,6 +69,7 @@ export default async function HomePage() {
 
       <Hero
         hargaMulai={heroHarga}
+        tanggalTerdekat={heroTanggalTerdekat}
         gambar={{
           src: "/images/hero-jamaah.jpg",
           alt: "Jamaah Luhas berdoa bersama menghadap Ka'bah saat matahari terbit",
