@@ -10,6 +10,7 @@ import { track } from "@/lib/analytics";
 import { PackageCard } from "./package-card";
 import { CompareBar } from "./compare-bar";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, Label } from "@/components/ui/field";
@@ -128,23 +129,15 @@ export function PackageExplorer({ pakets }: { pakets: PackageView[] }) {
   const FilterPanel = (
     <div className="space-y-6">
       <fieldset>
-        <legend className="mb-2 text-sm font-semibold text-brand-ink">Kategori</legend>
+        <legend className="mb-2.5 text-[13.5px] font-semibold text-brand-muted-2">Kategori</legend>
         <div className="flex flex-wrap gap-2">
+          <Chip selected={fKategori.length === 0} onClick={() => setParams({ kategori: null })}>
+            Semua
+          </Chip>
           {kategoriPaket.map((k) => (
-            <button
-              key={k}
-              type="button"
-              onClick={() => toggleKategori(k)}
-              aria-pressed={fKategori.includes(k)}
-              className={cn(
-                "rounded-[var(--radius-chip)] border px-3 py-1.5 text-xs font-medium transition-colors",
-                fKategori.includes(k)
-                  ? "border-brand-primary bg-brand-primary text-white"
-                  : "border-brand-border bg-white text-brand-ink hover:border-brand-primary",
-              )}
-            >
+            <Chip key={k} selected={fKategori.includes(k)} onClick={() => toggleKategori(k)}>
               {KATEGORI_LABEL[k]}
-            </button>
+            </Chip>
           ))}
         </div>
       </fieldset>
@@ -244,8 +237,11 @@ export function PackageExplorer({ pakets }: { pakets: PackageView[] }) {
       <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
         {/* Filter — desktop sidebar */}
         <aside className="hidden lg:block">
-          <div className="sticky top-24 rounded-[var(--radius-card)] border border-brand-border bg-white p-5">
-            <h2 className="mb-4 font-heading text-base font-bold text-brand-ink">Filter</h2>
+          <div className="sticky top-24 rounded-[var(--radius-card)] border border-brand-border bg-white p-6">
+            <h2 className="mb-6 flex items-center gap-2.5 font-heading text-base font-extrabold text-brand-ink">
+              <SlidersHorizontal className="size-5 text-brand-primary" aria-hidden />
+              Saring paket
+            </h2>
             {FilterPanel}
           </div>
         </aside>
@@ -254,7 +250,7 @@ export function PackageExplorer({ pakets }: { pakets: PackageView[] }) {
           {/* Toolbar */}
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <p className="text-sm text-brand-muted" aria-live="polite">
-              {hasil.length} paket ditemukan
+              <b className="font-bold text-brand-ink">{hasil.length} paket</b> ditemukan
             </p>
             <div className="flex items-center gap-2">
               <button
@@ -368,7 +364,10 @@ export function PackageExplorer({ pakets }: { pakets: PackageView[] }) {
           />
           <div className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-[var(--radius-card)] bg-white p-5">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-heading text-base font-bold text-brand-ink">Filter</h2>
+              <h2 className="flex items-center gap-2.5 font-heading text-base font-extrabold text-brand-ink">
+                <SlidersHorizontal className="size-5 text-brand-primary" aria-hidden />
+                Saring paket
+              </h2>
               <button
                 onClick={() => setPanelOpen(false)}
                 aria-label="Tutup filter"
