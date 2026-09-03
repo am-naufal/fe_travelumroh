@@ -32,6 +32,8 @@
   --color-tint-neutral-bg: #edf1f7;
   --color-tint-neutral-bg-2: #e4eaf3;
   --color-wa-ink: #06301a; /* teks gelap di atas tombol WhatsApp hijau, sesuai mockup */
+  --color-success-text: #157f4c; /* judul & ikon "Sudah termasuk" di halaman detail paket */
+  --color-success-bg: #e4f5ea;
 
   /* Tipografi — docs/design/*.html memakai satu keluarga Plus Jakarta Sans
      untuk body maupun heading (beda dari PRD §9.3 lama yang memisah Inter). */

@@ -10,7 +10,9 @@ import {
   FileText,
   UserRound,
   Clock,
+  Info,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import {
   getPackage,
   getPackageSlugs,
@@ -31,6 +33,7 @@ import { pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { productLd, breadcrumbLd } from "@/lib/jsonld";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { StarMark } from "@/components/ui/star-mark";
 import { Badge, PackageBadge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WhatsAppCta } from "@/components/layout/whatsapp-cta";
@@ -63,10 +66,30 @@ export async function generateMetadata({ params }: PageProps<"/paket/[slug]">) {
   });
 }
 
-const SectionTitle = ({ children, id }: { children: React.ReactNode; id?: string }) => (
-  <h2 id={id} className="mb-4 font-heading text-xl font-bold text-brand-ink sm:text-2xl">
-    {children}
-  </h2>
+// Motif eyebrow persis docs/design/DetailDesktop.html: ikon bintang emas +
+// label kecil huruf besar-tracked di atas judul seksi.
+const SectionTitle = ({
+  children,
+  id,
+  kicker,
+}: {
+  children: React.ReactNode;
+  id?: string;
+  kicker?: string;
+}) => (
+  <div className="mb-5">
+    {kicker && (
+      <div className="mb-2.5 inline-flex items-center gap-[7px]">
+        <StarMark size={14} className="text-brand-accent" />
+        <span className="text-xs font-bold tracking-[0.1em] text-tint-gold-text uppercase">
+          {kicker}
+        </span>
+      </div>
+    )}
+    <h2 id={id} className="font-heading text-2xl font-extrabold text-brand-ink sm:text-[30px]">
+      {children}
+    </h2>
+  </div>
 );
 
 export default async function PaketDetailPage({ params }: PageProps<"/paket/[slug]">) {
@@ -121,32 +144,47 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
         <div className="mt-5 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <PackageGallery images={paket.galeri} nama={paket.nama} />
 
-          {/* Kartu harga + CTA ganda */}
-          <div className="rounded-[var(--radius-card)] border border-brand-border bg-white p-5">
-            <p className="text-sm text-brand-muted">Harga per orang</p>
-            <table className="mt-2 w-full text-sm">
-              <tbody>
-                {(
-                  [
-                    ["Quad (4 orang / kamar)", paket.hargaPerKamar.quad],
-                    ["Triple (3 orang / kamar)", paket.hargaPerKamar.triple],
-                    ["Double (2 orang / kamar)", paket.hargaPerKamar.double],
-                  ] as const
-                ).map(([label, harga]) => (
-                  <tr key={label} className="border-b border-brand-border last:border-0">
-                    <th scope="row" className="py-2 text-left font-normal text-brand-muted">
-                      {label}
-                    </th>
-                    <td className="py-2 text-right font-heading font-bold text-brand-ink">
-                      {formatRupiah(harga)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Kartu harga + CTA ganda — persis docs/design/DetailDesktop.html */}
+          <div className="flex flex-col gap-[18px] rounded-[var(--radius-card)] border border-brand-border bg-white p-6 shadow-[var(--shadow-md)]">
+            <p className="font-heading text-base font-extrabold text-brand-ink">Harga per orang</p>
+
+            <div className="flex flex-col gap-2.5">
+              {(
+                [
+                  { label: "Berempat (Quad)", harga: paket.hargaPerKamar.quad, utama: true },
+                  { label: "Bertiga (Triple)", harga: paket.hargaPerKamar.triple, utama: false },
+                  { label: "Berdua (Double)", harga: paket.hargaPerKamar.double, utama: false },
+                ] as const
+              ).map((row) => (
+                <div
+                  key={row.label}
+                  className={cn(
+                    "flex items-center justify-between gap-3.5 rounded-xl border px-4 py-[15px]",
+                    row.utama ? "border-brand-primary bg-tint-blue-bg" : "border-brand-border bg-white",
+                  )}
+                >
+                  <div>
+                    <p className="text-[15px] font-bold text-brand-ink">{row.label}</p>
+                    {row.utama && (
+                      <p className="mt-0.5 text-[12.5px] font-bold text-tint-gold-text">
+                        Paling banyak dipilih
+                      </p>
+                    )}
+                  </div>
+                  <p
+                    className={cn(
+                      "shrink-0 text-[19px] font-extrabold whitespace-nowrap",
+                      row.utama ? "text-brand-primary" : "text-brand-ink",
+                    )}
+                  >
+                    {formatRupiah(row.harga)}
+                  </p>
+                </div>
+              ))}
+            </div>
 
             {terdekat && (
-              <p className="mt-3 flex items-center gap-1.5 text-sm text-brand-ink">
+              <p className="flex items-center gap-1.5 text-sm text-brand-ink">
                 <CalendarDays className="size-4 text-brand-primary" aria-hidden />
                 Berangkat terdekat {formatTanggal(terdekat.tanggal)}
                 {daysUntil(terdekat.tanggal) >= 0 && (
@@ -156,11 +194,12 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
             )}
             {terdekat && terdekat.sisaSeat > 0 && (
               <p
-                className={
+                className={cn(
+                  "-mt-2 text-sm",
                   terdekat.sisaSeat <= 6
-                    ? "mt-1 text-sm font-medium text-brand-danger"
-                    : "mt-1 text-sm text-brand-muted"
-                }
+                    ? "font-bold text-brand-danger-text"
+                    : "text-brand-muted",
+                )}
               >
                 {terdekat.sisaSeat <= 6
                   ? `Sisa ${terdekat.sisaSeat} seat untuk tanggal ini`
@@ -168,7 +207,7 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
               </p>
             )}
 
-            <div className="mt-4 flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {paket.aktif ? (
                 <>
                   <WhatsAppCta
@@ -177,16 +216,17 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
                     tanggal={waTanggal}
                     packageSlug={paket.slug}
                     ctaPosition="detail-header"
+                    size="lg"
                     className="w-full"
                   >
-                    Chat Sekarang
+                    Chat Sekarang via WhatsApp
                   </WhatsAppCta>
-                  <Button asChild variant="secondary" className="w-full">
-                    <Link href={`/daftar?paket=${paket.slug}`}>Daftar Minat</Link>
+                  <Button asChild variant="secondary" size="lg" className="w-full">
+                    <Link href={`/daftar?paket=${paket.slug}`}>Isi Formulir Pendaftaran</Link>
                   </Button>
                 </>
               ) : (
-                <Button asChild className="w-full">
+                <Button asChild size="lg" className="w-full">
                   <Link href="/paket">Lihat paket yang tersedia</Link>
                 </Button>
               )}
@@ -194,6 +234,12 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
                 <BrochureButton href={paket.brosurPdf} slug={paket.slug} className="w-full justify-center" />
               )}
             </div>
+
+            <p className="flex items-start gap-2 text-[12.5px] leading-relaxed text-brand-muted">
+              <Info className="mt-px size-[15px] shrink-0" aria-hidden />
+              Harga dikunci setelah uang muka masuk. Uang muka mulai dari{" "}
+              {formatRupiah(paket.dpMinimum)}.
+            </p>
           </div>
         </div>
       </section>
@@ -288,26 +334,36 @@ export default async function PaketDetailPage({ params }: PageProps<"/paket/[slu
 
           {/* 6. Fasilitas termasuk / tidak termasuk */}
           <section>
-            <SectionTitle id="fasilitas">Fasilitas</SectionTitle>
+            <SectionTitle id="fasilitas" kicker="Fasilitas">
+              Apa yang termasuk dan tidak
+            </SectionTitle>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[var(--radius-card)] border border-brand-success/30 bg-brand-success/5 p-4">
-                <h3 className="font-heading text-sm font-bold text-brand-ink">Sudah termasuk</h3>
-                <ul className="mt-2 space-y-1.5 text-sm text-brand-ink">
+              <div className="rounded-[var(--radius-card)] border border-brand-border bg-white p-5">
+                <h3 className="mb-1.5 font-heading text-base font-extrabold text-success-text">
+                  Sudah termasuk
+                </h3>
+                <ul>
                   {paket.termasuk.map((t) => (
-                    <li key={t} className="flex gap-2">
-                      <Check className="mt-0.5 size-4 shrink-0 text-brand-success" aria-hidden />
-                      {t}
+                    <li key={t} className="flex items-start gap-2.5 py-2.5">
+                      <span className="mt-px flex size-[22px] shrink-0 items-center justify-center rounded-full bg-success-bg">
+                        <Check className="size-[13px] text-success-text" strokeWidth={2.5} aria-hidden />
+                      </span>
+                      <span className="text-[14.5px] leading-normal text-brand-muted-2">{t}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-[var(--radius-card)] border border-brand-border bg-white p-4">
-                <h3 className="font-heading text-sm font-bold text-brand-ink">Belum termasuk</h3>
-                <ul className="mt-2 space-y-1.5 text-sm text-brand-muted">
+              <div className="rounded-[var(--radius-card)] border border-brand-border bg-white p-5">
+                <h3 className="mb-1.5 font-heading text-base font-extrabold text-brand-danger-text">
+                  Belum termasuk
+                </h3>
+                <ul>
                   {paket.tidakTermasuk.map((t) => (
-                    <li key={t} className="flex gap-2">
-                      <X className="mt-0.5 size-4 shrink-0 text-brand-danger" aria-hidden />
-                      {t}
+                    <li key={t} className="flex items-start gap-2.5 py-2.5">
+                      <span className="mt-px flex size-[22px] shrink-0 items-center justify-center rounded-full bg-brand-danger-bg">
+                        <X className="size-[13px] text-brand-danger-text" strokeWidth={2.5} aria-hidden />
+                      </span>
+                      <span className="text-[14.5px] leading-normal text-brand-muted-2">{t}</span>
                     </li>
                   ))}
                 </ul>
