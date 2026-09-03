@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Plane, MapPin, CalendarDays, Building2, RefreshCw } from "lucide-react";
+import { Plane, CalendarDays, Building2, Users } from "lucide-react";
 import type { PackageView } from "@/lib/package-view";
-import { formatRupiah, formatTanggalShort, formatJarak, daysUntil } from "@/lib/format";
+import { formatRupiah, formatTanggal, formatTanggalShort, formatJarak } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Figure } from "@/components/ui/media";
-import { PackageBadge } from "@/components/ui/badge";
+import { Badge, PackageBadge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { WhatsAppCta } from "@/components/layout/whatsapp-cta";
@@ -27,12 +27,16 @@ export function PackageCard({
 }) {
   const compare = useCompare();
   const checked = compare.has(paket.slug);
+  const urgent =
+    paket.sisaSeatTerdekat !== null &&
+    paket.sisaSeatTerdekat > 0 &&
+    paket.sisaSeatTerdekat <= SEAT_HAMPIR_PENUH;
   const seatLabel =
     paket.sisaSeatTerdekat === null
       ? null
       : paket.sisaSeatTerdekat <= 0
         ? "Kuota penuh"
-        : paket.sisaSeatTerdekat <= SEAT_HAMPIR_PENUH
+        : urgent
           ? `Sisa ${paket.sisaSeatTerdekat} seat`
           : `${paket.sisaSeatTerdekat} seat tersedia`;
 
@@ -43,79 +47,84 @@ export function PackageCard({
           <Figure
             image={paket.gambarUtama}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
-            ratio="16/10"
             rounded={false}
             priority={priority}
-            className="w-full"
+            className="h-[178px] w-full"
           />
         </Link>
-        <div className="absolute left-3 top-3 flex gap-2">
-          {paket.badge && <PackageBadge value={paket.badge} />}
+        <div className="absolute top-3 left-3 z-[3]">
+          {paket.kategori === "vip" ? (
+            <Badge variant="vip">VIP</Badge>
+          ) : urgent ? (
+            <PackageBadge value="hampir-penuh" label={seatLabel ?? undefined} />
+          ) : (
+            paket.badge && <PackageBadge value={paket.badge} />
+          )}
+        </div>
+        <div className="absolute top-3 right-3 z-[3]">
+          <Badge variant="info">{paket.durasiHari} hari</Badge>
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="font-heading text-base font-bold text-brand-ink">
+      <div className="flex flex-1 flex-col gap-3.5 px-4 pt-[18px] pb-4">
+        <div className="flex flex-col gap-1.5">
+          <h3 className="font-heading text-[19px] font-extrabold text-brand-ink">
             <Link href={`/paket/${paket.slug}`} className="hover:text-brand-primary">
               {paket.nama}
             </Link>
           </h3>
+          <p className="text-sm text-brand-muted">
+            {paket.durasiHari} hari · Berangkat dari {paket.kotaKeberangkatan.join(", ")}
+          </p>
         </div>
 
-        <p className="mt-1 line-clamp-2 text-sm text-brand-muted">{paket.ringkasan}</p>
-
-        <div className="mt-3">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-xs text-brand-muted">mulai</span>
-            <span className="font-heading text-xl font-bold text-brand-ink">
-              {formatRupiah(paket.hargaMulai)}
+        <ul className="flex flex-col gap-2 text-sm text-brand-muted-2">
+          {paket.tanggalTerdekat && (
+            <li className="flex items-start gap-2.5">
+              <CalendarDays className="mt-px size-4 shrink-0 text-brand-muted" aria-hidden />
+              <span>Berangkat {formatTanggal(paket.tanggalTerdekat)}</span>
+            </li>
+          )}
+          <li className="flex items-start gap-2.5">
+            <Building2 className="mt-px size-4 shrink-0 text-brand-muted" aria-hidden />
+            <span>
+              Hotel bintang {paket.hotelMakkah.bintang} · {formatJarak(paket.hotelMakkah.jarakMeter)}{" "}
+              dari Masjidil Haram
             </span>
-            <span className="text-xs text-brand-muted">/ orang (quad)</span>
-          </div>
-        </div>
-
-        <ul className="mt-3 grid gap-1.5 text-xs text-brand-muted">
-          <li className="flex items-center gap-1.5">
-            <CalendarDays className="size-3.5 shrink-0" aria-hidden />
-            {paket.durasiHari} hari
-            {paket.tanggalTerdekat && ` · berangkat ${formatTanggalShort(paket.tanggalTerdekat)}`}
           </li>
-          <li className="flex items-center gap-1.5">
-            <Plane className="size-3.5 shrink-0" aria-hidden />
-            {paket.maskapai.nama}
-            {paket.maskapai.transit ? " (transit)" : " (langsung)"}
-          </li>
-          <li className="flex items-center gap-1.5">
-            <Building2 className="size-3.5 shrink-0" aria-hidden />
-            {paket.hotelMakkah.nama} ★{paket.hotelMakkah.bintang} ·{" "}
-            {formatJarak(paket.hotelMakkah.jarakMeter)} dari Masjidil Haram
-          </li>
-          <li className="flex items-center gap-1.5">
-            <MapPin className="size-3.5 shrink-0" aria-hidden />
-            {paket.kotaKeberangkatan.join(", ")}
+          <li className="flex items-start gap-2.5">
+            <Plane className="mt-px size-4 shrink-0 text-brand-muted" aria-hidden />
+            <span>
+              {paket.maskapai.nama} · penerbangan {paket.maskapai.transit ? "transit" : "langsung"}
+            </span>
           </li>
         </ul>
 
-        {/* PRD §9.2/§13: sisa seat sertakan teks, bukan hanya warna */}
-        {seatLabel && (
-          <p
-            className={cn(
-              "mt-3 text-xs font-medium",
-              paket.sisaSeatTerdekat !== null &&
-                paket.sisaSeatTerdekat > 0 &&
-                paket.sisaSeatTerdekat <= SEAT_HAMPIR_PENUH
-                ? "text-brand-danger"
-                : "text-brand-muted",
-            )}
-          >
-            {seatLabel}
-          </p>
-        )}
+        <div className="h-px bg-tint-neutral-bg" />
 
-        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-          <Button asChild size="sm" className="flex-1">
-            <Link href={`/paket/${paket.slug}`}>Detail</Link>
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold text-brand-muted">Mulai dari · kamar berempat</p>
+            <p className="font-heading text-2xl font-extrabold tracking-[-0.02em] text-brand-primary">
+              {formatRupiah(paket.hargaMulai)}
+            </p>
+          </div>
+          {seatLabel && (
+            <p
+              className={cn(
+                "flex items-center gap-1.5 text-[13px]",
+                urgent ? "font-bold text-brand-danger-text" : "text-brand-muted",
+              )}
+            >
+              <Users className="size-[15px] shrink-0" aria-hidden />
+              {seatLabel}
+            </p>
+          )}
+        </div>
+
+        <div className="flex gap-2.5">
+          <Button asChild variant="secondary" size="sm" className="flex-1">
+            <Link href={`/paket/${paket.slug}`}>Lihat Detail</Link>
           </Button>
           {paket.tanggalTerdekat ? (
             <WhatsAppCta
@@ -125,7 +134,6 @@ export function PackageCard({
               packageSlug={paket.slug}
               ctaPosition="package-card"
               size="sm"
-              variant="secondary"
               className="flex-1"
             >
               Tanya via WA
@@ -136,7 +144,6 @@ export function PackageCard({
               text={`Assalamualaikum, saya tertarik dengan paket ${paket.nama}. Mohon informasi jadwal keberangkatan berikutnya.`}
               ctaPosition="package-card"
               size="sm"
-              variant="secondary"
               className="flex-1"
             >
               Tanya via WA
@@ -145,7 +152,7 @@ export function PackageCard({
         </div>
 
         {showCompare && (
-          <label className="mt-3 flex cursor-pointer items-center gap-2 text-xs text-brand-muted">
+          <label className="flex cursor-pointer items-center gap-2 text-xs text-brand-muted">
             <Checkbox
               checked={checked}
               onCheckedChange={() => compare.toggle(paket.slug)}
@@ -156,14 +163,6 @@ export function PackageCard({
             {!checked && compare.isFull && " (maks 3 paket)"}
           </label>
         )}
-
-        <p className="mt-2 flex items-center gap-1 text-[11px] text-brand-muted/80">
-          <RefreshCw className="size-3" aria-hidden />
-          Diperbarui {formatTanggalShort(paket.diperbaruiPada)}
-          {paket.tanggalTerdekat && daysUntil(paket.tanggalTerdekat) >= 0
-            ? ` · ${daysUntil(paket.tanggalTerdekat)} hari lagi`
-            : ""}
-        </p>
       </div>
     </article>
   );
