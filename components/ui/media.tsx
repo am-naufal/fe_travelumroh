@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { CSSProperties } from "react";
 import type { Gambar } from "@/lib/cms/schema";
 
 /**
@@ -16,7 +18,13 @@ import type { Gambar } from "@/lib/cms/schema";
  */
 export const USE_REAL_IMAGES = process.env.NEXT_PUBLIC_USE_REAL_IMAGES === "true";
 
-function gradientFor(seed: string): string {
+// Placeholder foto — gradasi + garis diagonal tipis, persis docs/design/*.html (.ph).
+const PLACEHOLDER_GRADIENT =
+  "linear-gradient(135deg, var(--color-brand-ink) 0%, var(--color-brand-ink-2) 55%, var(--color-brand-primary) 100%)";
+const PLACEHOLDER_STRIPES =
+  "repeating-linear-gradient(45deg, rgba(255,255,255,0.045) 0 12px, rgba(255,255,255,0) 12px 24px)";
+
+function avatarGradientFor(seed: string): string {
   let h = 0;
   for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
   const a = h % 360;
@@ -76,10 +84,16 @@ export function Figure({
         rounded && "rounded-[var(--radius-card)]",
         className,
       )}
-      style={{ ...style, backgroundImage: gradientFor(image.alt) }}
+      style={
+        {
+          ...style,
+          backgroundImage: `${PLACEHOLDER_STRIPES}, ${PLACEHOLDER_GRADIENT}`,
+        } as CSSProperties
+      }
     >
-      <span className="pointer-events-none m-3 line-clamp-2 rounded bg-black/25 px-2 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm">
-        {image.alt}
+      <span className="pointer-events-none m-3 inline-flex max-w-[calc(100%-24px)] items-center gap-1.5 rounded-full bg-brand-ink/[.42] px-2.5 py-[5px] text-[11px] font-semibold text-white/80">
+        <Camera className="size-3.5 shrink-0" aria-hidden />
+        <span className="line-clamp-1">{image.alt}</span>
       </span>
     </div>
   );
@@ -109,7 +123,7 @@ export function AvatarFigure({ image, size = 48 }: { image: Gambar; size?: numbe
       role="img"
       aria-label={image.alt}
       className="flex shrink-0 items-center justify-center rounded-full font-heading text-sm font-bold text-white"
-      style={{ width: size, height: size, backgroundImage: gradientFor(image.alt) }}
+      style={{ width: size, height: size, backgroundImage: avatarGradientFor(image.alt) }}
     >
       {initials}
     </span>
