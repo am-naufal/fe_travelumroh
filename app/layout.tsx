@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { env } from "@/lib/env";
 import { getSettings } from "@/lib/cms";
@@ -12,20 +12,14 @@ import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { CompareProvider } from "@/components/package/compare-context";
 import { ToastProvider } from "@/components/ui/toast";
 
-// PRD §9.3, §12 — heading Plus Jakarta Sans, body Inter, display swap, subset latin
+// docs/design/*.html: satu keluarga Plus Jakarta Sans untuk body & heading,
+// bobot 400–800. Display swap, subset latin, preload — PRD §12.
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
-  preload: true, // PRD §12: preload font heading
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -52,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="id"
       data-scroll-behavior="smooth"
-      className={`${jakarta.variable} ${inter.variable} h-full`}
+      className={`${jakarta.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-brand-bg text-brand-ink">
         <a href="#konten-utama" className="skip-link">

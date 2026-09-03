@@ -6,24 +6,38 @@
 */
 
 @theme {
-  /* Warna brand — PRD §9.2 */
+  /* Warna brand — PRD §9.2, disamakan persis dengan docs/design/*.html */
   --color-brand-primary: #0a5caf;
   --color-brand-primary-dark: #07407c;
   --color-brand-accent: #e8a00c;
+  --color-brand-accent-vip: #f4d41f; /* varian emas terang, badge VIP */
   --color-brand-ink: #0b1b3d;
+  --color-brand-ink-2: #123163; /* varian ink lebih terang, gradasi placeholder foto */
   --color-brand-muted: #5a6b8c;
+  --color-brand-muted-2: #42506e; /* teks sekunder lebih gelap dari brand-muted di mockup */
+  --color-brand-muted-3: #66748f; /* placeholder teks di input */
   --color-brand-surface: #ffffff;
   --color-brand-bg: #f4f7fc;
   --color-brand-success: #16a34a;
   --color-brand-warning: #f59e0b;
   --color-brand-danger: #dc2626;
-  --color-brand-border: #e2e8f5;
+  --color-brand-danger-text: #c6262e; /* teks di atas tint danger, mis. badge "Sisa N seat" */
+  --color-brand-danger-bg: #fbe9ea;
+  --color-brand-border: #dde3ee;
 
-  /* Tipografi — PRD §9.3 */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  /* Tint tambahan dari mockup — dipakai badge/label lembut, bukan CTA utama */
+  --color-tint-blue-bg: #e7f0fb;
+  --color-tint-gold-bg: #fdf2e0;
+  --color-tint-gold-text: #9a6206; /* PRD §9.2: emas tidak dipakai sebagai teks di atas putih */
+  --color-tint-neutral-bg: #edf1f7;
+  --color-tint-neutral-bg-2: #e4eaf3;
+  --color-wa-ink: #06301a; /* teks gelap di atas tombol WhatsApp hijau, sesuai mockup */
+
+  /* Tipografi — docs/design/*.html memakai satu keluarga Plus Jakarta Sans
+     untuk body maupun heading (beda dari PRD §9.3 lama yang memisah Inter). */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
-  --font-heading: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui,
-    sans-serif;
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 
   --text-xs: 0.75rem; /* 12 */
   --text-sm: 0.875rem; /* 14 */
@@ -42,9 +56,9 @@
   --radius-card: 16px;
   --radius-chip: 999px;
 
-  /* Elevasi — PRD §9.4: dua tingkat saja */
-  --shadow-sm: 0 1px 2px 0 rgb(11 27 61 / 0.06), 0 1px 3px 0 rgb(11 27 61 / 0.05);
-  --shadow-md: 0 4px 12px -2px rgb(11 27 61 / 0.10), 0 2px 6px -2px rgb(11 27 61 / 0.06);
+  /* Elevasi — PRD §9.4: dua tingkat saja. Nilai persis dari docs/design/*.html (.sh1/.sh2) */
+  --shadow-sm: 0 1px 2px rgba(11, 27, 61, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 27, 61, 0.09);
 
   /* Gerak — PRD §9.7 */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
