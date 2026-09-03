@@ -10,12 +10,12 @@ export const Label = React.forwardRef<
 >(({ className, children, required, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={cn("mb-1.5 block text-sm font-medium text-brand-ink", className)}
+    className={cn("mb-1.5 block text-sm font-bold text-brand-ink", className)}
     {...props}
   >
     {children}
     {required && (
-      <span className="text-brand-danger" aria-hidden>
+      <span className="text-brand-danger-text" aria-hidden>
         {" "}
         *
       </span>

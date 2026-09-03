@@ -29,7 +29,10 @@ export const RadioGroupItem = React.forwardRef<
 ));
 RadioGroupItem.displayName = "RadioGroupItem";
 
-/** Kartu pilihan radio dengan label — dipakai di LeadForm (Tunai/Cicilan). */
+/**
+ * Kartu pilihan radio dengan label — dipakai di LeadForm (Tunai/Cicilan).
+ * Pil terpusat min-height 52px, sesuai docs/design/DaftarDesktop.html.
+ */
 export function RadioCard({
   value,
   id,
@@ -44,12 +47,14 @@ export function RadioCard({
   return (
     <label
       htmlFor={id}
-      className="flex cursor-pointer items-start gap-3 rounded-xl border border-brand-border p-3.5 transition-colors has-[:checked]:border-brand-primary has-[:checked]:bg-brand-primary/5"
+      className="flex min-h-[52px] cursor-pointer items-center justify-center gap-2.5 rounded-xl border-[1.5px] border-brand-border px-3 text-center text-[15px] font-bold text-brand-muted-2 transition-colors has-[:checked]:border-brand-primary has-[:checked]:bg-tint-blue-bg has-[:checked]:text-brand-primary-dark"
     >
-      <RadioGroupItem value={value} id={id} className="mt-0.5" />
+      <RadioGroupItem value={value} id={id} />
       <span>
-        <span className="block text-sm font-medium text-brand-ink">{label}</span>
-        {description && <span className="block text-xs text-brand-muted">{description}</span>}
+        {label}
+        {description && (
+          <span className="block text-xs font-normal text-brand-muted">{description}</span>
+        )}
       </span>
     </label>
   );

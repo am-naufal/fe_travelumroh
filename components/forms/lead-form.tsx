@@ -14,6 +14,7 @@ import {
 import { env } from "@/lib/env";
 import { track, getPersistedUtm } from "@/lib/analytics";
 import { waAfterLead } from "@/lib/wa-link";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea, Select, Label, FieldError, FieldHint } from "@/components/ui/field";
 import { RadioGroup, RadioCard } from "@/components/ui/radio-group";
@@ -102,14 +103,34 @@ export function LeadForm({ pakets, defaultPaket }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-      {/* Progres 2 langkah */}
-      <ol className="flex items-center gap-2 text-xs font-medium" aria-label="Langkah formulir">
-        <li className={step === 1 ? "text-brand-primary" : "text-brand-muted"}>1. Data diri</li>
-        <li className="text-brand-border">—</li>
-        <li className={step === 2 ? "text-brand-primary" : "text-brand-muted"}>
-          2. Rencana umroh
-        </li>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
+      {/* Progres 2 langkah — persis docs/design/DaftarDesktop.html */}
+      <ol className="flex items-center gap-3 py-1" aria-label="Langkah formulir">
+        {(
+          [
+            { n: 1, label: "Data Anda" },
+            { n: 2, label: "Rencana Umroh" },
+          ] as const
+        ).map((s) => (
+          <li key={s.n} className="flex flex-1 items-center gap-2.5">
+            <span
+              className={cn(
+                "flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-extrabold",
+                step >= s.n ? "bg-brand-primary text-white" : "bg-tint-blue-bg text-brand-muted",
+              )}
+            >
+              {s.n}
+            </span>
+            <span
+              className={cn(
+                "text-[14.5px]",
+                step === s.n ? "font-extrabold text-brand-ink" : "font-semibold text-brand-muted",
+              )}
+            >
+              {s.label}
+            </span>
+          </li>
+        ))}
       </ol>
 
       {/* Honeypot — disembunyikan dari manusia & AT */}
@@ -132,7 +153,11 @@ export function LeadForm({ pakets, defaultPaket }: Props) {
               aria-describedby={errors.nama ? "err-nama" : undefined}
               {...register("nama")}
             />
-            <FieldError id="err-nama">{errors.nama?.message}</FieldError>
+            {errors.nama ? (
+              <FieldError id="err-nama">{errors.nama.message}</FieldError>
+            ) : (
+              <FieldHint id="hint-nama">Tulis 3 kata bila paspor Anda 3 kata.</FieldHint>
+            )}
           </div>
 
           <div>
@@ -261,13 +286,8 @@ export function LeadForm({ pakets, defaultPaket }: Props) {
               onValueChange={(v) => setValue("rencanaPembayaran", v as "tunai" | "cicilan")}
               className="grid-cols-2"
             >
-              <RadioCard value="tunai" id="bayar-tunai" label="Tunai" description="Lunas di awal" />
-              <RadioCard
-                value="cicilan"
-                id="bayar-cicilan"
-                label="Cicilan"
-                description="DP dulu, sisa dicicil"
-              />
+              <RadioCard value="tunai" id="bayar-tunai" label="Tunai" />
+              <RadioCard value="cicilan" id="bayar-cicilan" label="Bertahap" />
             </RadioGroup>
             <FieldError id="err-bayar">{errors.rencanaPembayaran?.message}</FieldError>
           </div>

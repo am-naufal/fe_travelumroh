@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { waAfterLead } from "@/lib/wa-link";
 import { track } from "@/lib/analytics";
+import { buttonVariants } from "@/components/ui/button";
 
 // PRD §7.11: tombol "Lanjut chat WA sekarang" + memicu event konversi.
 export function ThankYouActions({
@@ -36,15 +37,12 @@ export function ThankYouActions({
             params: { source_page: "/terima-kasih", package_slug: paketSlug, cta_position: "thankyou" },
           })
         }
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-[#25D366] px-6 text-sm font-semibold text-white"
+        className={buttonVariants({ variant: "whatsapp", size: "lg" })}
       >
         <MessageCircle className="size-4" aria-hidden />
         Lanjut chat WA sekarang
       </a>
-      <Link
-        href="/paket"
-        className="inline-flex h-12 items-center justify-center rounded-[var(--radius-btn)] border border-brand-border bg-white px-6 text-sm font-semibold text-brand-ink"
-      >
+      <Link href="/paket" className={buttonVariants({ variant: "secondary", size: "lg" })}>
         Lihat paket lain
       </Link>
     </div>
