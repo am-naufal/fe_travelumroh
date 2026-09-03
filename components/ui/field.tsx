@@ -24,14 +24,17 @@ export const Label = React.forwardRef<
 ));
 Label.displayName = "Label";
 
+// Nilai persis docs/design/*.html (.fld): radius 12px, min-height 50px,
+// border/placeholder dari token tint. Font tetap 16px (bukan 15px seperti
+// mockup) supaya Safari iOS tidak auto-zoom saat fokus — PRD §16.
 const baseControl =
-  "w-full rounded-[10px] border border-brand-border bg-white px-3.5 py-2.5 text-base text-brand-ink placeholder:text-brand-muted/60 transition-colors focus:border-brand-primary focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-brand-primary/30 disabled:opacity-60 aria-[invalid=true]:border-brand-danger aria-[invalid=true]:focus:outline-brand-danger/30";
+  "w-full rounded-[var(--radius-btn)] border border-brand-border bg-white px-3.5 py-2.5 text-base text-brand-ink placeholder:text-brand-muted-3 transition-colors focus:border-brand-primary focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-brand-primary/30 disabled:opacity-60 aria-[invalid=true]:border-brand-danger aria-[invalid=true]:focus:outline-brand-danger/30";
 
 export const Input = React.forwardRef<
   HTMLInputElement,
   React.InputHTMLAttributes<HTMLInputElement>
 >(({ className, ...props }, ref) => (
-  <input ref={ref} className={cn(baseControl, "min-h-[44px]", className)} {...props} />
+  <input ref={ref} className={cn(baseControl, "min-h-[50px]", className)} {...props} />
 ));
 Input.displayName = "Input";
 
@@ -49,7 +52,7 @@ export const Select = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <select
     ref={ref}
-    className={cn(baseControl, "min-h-[44px] appearance-none bg-[right_0.75rem_center] bg-no-repeat pr-10", className)}
+    className={cn(baseControl, "min-h-[50px] appearance-none bg-[right_0.75rem_center] bg-no-repeat pr-10", className)}
     style={{
       backgroundImage:
         "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A6B8C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",

@@ -1,5 +1,8 @@
 import Link from "next/link";
+import type { ComponentType } from "react";
 import type { PengaturanSitus } from "@/lib/cms/schema";
+import { StarMark } from "@/components/ui/star-mark";
+import { MessageCircle } from "lucide-react";
 import {
   InstagramIcon,
   TiktokIcon,
@@ -20,143 +23,141 @@ const KOL_INFO = [
   { href: "/tentang", label: "Tentang Luhas" },
   { href: "/pembimbing", label: "Pembimbing Ibadah" },
   { href: "/panduan", label: "Panduan Umroh" },
-  { href: "/testimoni", label: "Testimoni" },
+  { href: "/testimoni", label: "Testimoni Jamaah" },
   { href: "/galeri", label: "Galeri" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/faq", label: "Pertanyaan Umum" },
   { href: "/kontak", label: "Kontak" },
 ];
 
+const KOL_KEBIJAKAN = [
+  { href: "/kebijakan-privasi", label: "Kebijakan Privasi" },
+  { href: "/syarat-ketentuan", label: "Syarat & Ketentuan" },
+  { href: "/sitemap.xml", label: "Sitemap" },
+];
+
+// Warna & susunan persis docs/design/*.html: footer gelap, kolom kicker emas
+// huruf kecil-tracked, tautan putih 72% opacity.
 export function SiteFooter({ settings }: { settings: PengaturanSitus }) {
   const { legalitas, kontak, sosial } = settings;
+  const jamBuka = kontak.jamOperasional[0]?.jam;
+  const sosialList = [
+    sosial.instagram && { href: sosial.instagram, label: "Instagram Luhas", Icon: InstagramIcon },
+    sosial.tiktok && { href: sosial.tiktok, label: "TikTok Luhas", Icon: TiktokIcon },
+    sosial.youtube && { href: sosial.youtube, label: "YouTube Luhas", Icon: YoutubeIcon },
+    sosial.facebook && { href: sosial.facebook, label: "Facebook Luhas", Icon: FacebookIcon },
+  ].filter(Boolean) as { href: string; label: string; Icon: ComponentType }[];
+
   return (
-    <footer className="mt-16 border-t border-brand-border bg-white">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="flex size-9 items-center justify-center rounded-[10px] bg-brand-primary font-heading text-lg font-bold text-white">
-              L
-            </span>
-            <span className="font-heading text-xl font-bold text-brand-ink">Luhas</span>
-          </div>
-          <p className="mt-3 text-sm text-brand-muted">{settings.deskripsiSingkat}</p>
-          {/* PRD §6, §15: legalitas di footer */}
-          <dl className="mt-4 space-y-1 text-xs text-brand-muted">
-            <div>
-              <dt className="inline font-medium text-brand-ink">SK PPIU Kemenag: </dt>
-              <dd className="inline">
-                <a
-                  href={legalitas.urlVerifikasiKemenag}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-primary underline"
-                >
-                  {legalitas.skPpiu}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="inline font-medium text-brand-ink">NIB: </dt>
-              <dd className="inline">{legalitas.nib}</dd>
-            </div>
-          </dl>
-          <div className="mt-4 flex gap-3 text-brand-muted">
-            {sosial.instagram && (
-              <a href={sosial.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Luhas" className="hover:text-brand-primary">
-                <InstagramIcon />
-              </a>
-            )}
-            {sosial.tiktok && (
-              <a href={sosial.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok Luhas" className="hover:text-brand-primary">
-                <TiktokIcon />
-              </a>
-            )}
-            {sosial.youtube && (
-              <a href={sosial.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube Luhas" className="hover:text-brand-primary">
-                <YoutubeIcon />
-              </a>
-            )}
-            {sosial.facebook && (
-              <a href={sosial.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook Luhas" className="hover:text-brand-primary">
-                <FacebookIcon />
-              </a>
-            )}
-          </div>
-        </div>
+    <footer className="bg-brand-ink">
+      <div className="container-page pt-12 pb-8">
+        <Link href="/" className="inline-flex items-center gap-[9px]" aria-label="Luhas — Beranda">
+          <StarMark size={18} className="text-brand-accent" />
+          <span className="font-heading text-2xl font-extrabold tracking-[-0.03em] text-white">
+            Luhas
+          </span>
+          <span className="pt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+            Umroh
+          </span>
+        </Link>
+        <p className="mt-3 max-w-md text-sm text-white/72">{settings.deskripsiSingkat}</p>
 
-        <nav aria-label="Paket & alat">
-          <h2 className="font-heading text-sm font-bold text-brand-ink">Paket & Alat</h2>
-          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
-            {KOL_PAKET.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="hover:text-brand-primary">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <nav aria-label="Informasi">
-          <h2 className="font-heading text-sm font-bold text-brand-ink">Informasi</h2>
-          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
-            {KOL_INFO.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="hover:text-brand-primary">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div>
-          <h2 className="font-heading text-sm font-bold text-brand-ink">Kontak</h2>
-          <address className="mt-3 space-y-2 text-sm not-italic text-brand-muted">
-            <p>
-              {kontak.alamat.jalan}, {kontak.alamat.kota}, {kontak.alamat.provinsi}{" "}
-              {kontak.alamat.kodePos}
-            </p>
-            <p>
-              WhatsApp:{" "}
-              <a href={`https://wa.me/${kontak.waUtama}`} className="text-brand-primary">
-                +{kontak.waUtama}
-              </a>
-            </p>
-            <p>
-              Email:{" "}
-              <a href={`mailto:${kontak.email}`} className="text-brand-primary">
-                {kontak.email}
-              </a>
-            </p>
-            <div>
-              <p className="font-medium text-brand-ink">Jam operasional</p>
-              {kontak.jamOperasional.map((j) => (
-                <p key={j.hari}>
-                  {j.hari}: {j.jam}
-                </p>
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <nav aria-label="Paket & alat">
+            <h2 className="mb-3.5 text-[13px] font-bold tracking-[0.08em] text-brand-accent uppercase">
+              Paket Umroh
+            </h2>
+            <ul className="space-y-2.5 text-sm text-white/72">
+              {KOL_PAKET.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
               ))}
-            </div>
-          </address>
-        </div>
-      </div>
-
-      <div className="border-t border-brand-border">
-        <div className="container-page flex flex-col gap-2 py-5 text-xs text-brand-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {legalitas ? settings.namaLegal : "Luhas"}. Seluruh hak
-            cipta dilindungi.
-          </p>
-          <nav aria-label="Kebijakan" className="flex gap-4">
-            <Link href="/kebijakan-privasi" className="hover:text-brand-primary">
-              Kebijakan Privasi
-            </Link>
-            <Link href="/syarat-ketentuan" className="hover:text-brand-primary">
-              Syarat & Ketentuan
-            </Link>
-            <Link href="/sitemap.xml" className="hover:text-brand-primary">
-              Sitemap
-            </Link>
+            </ul>
           </nav>
+
+          <nav aria-label="Informasi">
+            <h2 className="mb-3.5 text-[13px] font-bold tracking-[0.08em] text-brand-accent uppercase">
+              Informasi
+            </h2>
+            <ul className="space-y-2.5 text-sm text-white/72">
+              {KOL_INFO.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Kebijakan">
+            <h2 className="mb-3.5 text-[13px] font-bold tracking-[0.08em] text-brand-accent uppercase">
+              Kebijakan
+            </h2>
+            <ul className="space-y-2.5 text-sm text-white/72">
+              {KOL_KEBIJAKAN.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h2 className="mb-3.5 text-[13px] font-bold tracking-[0.08em] text-brand-accent uppercase">
+              Hubungi Kami
+            </h2>
+            <a
+              href={`https://wa.me/${kontak.waUtama}`}
+              className="mb-2 flex items-center gap-2 text-[15px] font-bold text-white"
+            >
+              <MessageCircle className="size-[18px] text-[#25D366]" aria-hidden />+{kontak.waUtama}
+            </a>
+            <address className="not-italic text-sm text-white/72">
+              <p className="mb-1.5">
+                {kontak.alamat.jalan}, {kontak.alamat.kota}
+              </p>
+              {jamBuka && <p>{jamBuka}</p>}
+            </address>
+            {sosialList.length > 0 && (
+              <div className="mt-4 flex gap-2.5">
+                {sosialList.map(({ href, label, Icon }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex size-10 items-center justify-center rounded-[10px] border border-white/22 text-white hover:bg-white/10"
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-8 h-px bg-white/12" />
+
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-2 text-[13px] text-white/55">
+          <p>
+            © {new Date().getFullYear()} {legalitas ? settings.namaLegal : "Luhas"} · Berizin resmi
+            Kemenag ·{" "}
+            <a
+              href={legalitas.urlVerifikasiKemenag}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/30 underline-offset-2 hover:text-white"
+            >
+              {legalitas.skPpiu}
+            </a>
+          </p>
+          <p>luhas.co.id</p>
         </div>
       </div>
     </footer>
